@@ -1,0 +1,35 @@
+/*style.css*/
+body{
+	background-image: url('../assets/img/hd-wallpaper.jpg');
+	background-position: center;
+    -webkit-background-size: cover; /* For WebKit*/
+    -moz-background-size: cover;    /* Mozilla*/
+    -o-background-size: cover;      /* Opera*/
+    background-size: cover; 
+}
+
+.container{
+	height: 400px;
+	width: 500px;
+	text-align: center;
+	background-color: rgba(52,73,94,0.7);
+	border-radius: 4px;
+	margin:0 auto;
+	margin-top: 150px;
+}
+
+.container img{
+	height: 200px;
+	width: 200px;
+	margin-top:-60px;
+	margin-bottom: 30px;
+}
+
+.container input[type=text],input[type=password]{
+	height: 45px;
+	font-size: 18px;
+}
+
+.input-group{
+	margin-bottom: 5px;
+}
