@@ -1,9 +1,14 @@
 <?php
 session_start();
+require_once('pages/inc.php');
 ?>
 <html>
 <head>
 	<title>ATK Manager - Build Version 1.0</title>
+
+	<meta charset="utf-8">
+	<meta http-equiv="content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -22,7 +27,7 @@ session_start();
 		?>
 		<div class="container">
 			<img src="assets/img/user-icon.png"/>
-			<form id="form-login-1" action="">
+			<form id="form-login-1" action="" autocomplete="off">
 				<div class="input-group">
 				    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 				    <input id="username" type="text" class="form-control" name="userame" placeholder="User name">
