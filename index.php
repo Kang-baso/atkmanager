@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <html>
 <head>
 	<title>ATK Manager - Build Version 1.0</title>
@@ -15,23 +18,26 @@
 </head>
 <body>
 	<?php
-	if (1==1) {
+	if (!isset($_SESSION['username']) || $_SESSION['username']=='') {
 		?>
 		<div class="container">
 			<img src="assets/img/user-icon.png"/>
-			<form>
+			<form id="form-login-1" action="">
 				<div class="input-group">
-			    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-			    <input id="username" type="text" class="form-control" name="userame" placeholder="User name">
-			  </div>
-			  <div class="input-group">
-			    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-			    <input id="password" type="password" class="form-control" name="password" placeholder="Password">
-			  </div>
-				<button class="btn btn-success btn-lg"><span class="glyphicon glyphicon-user"></span> Login</button>
+				    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+				    <input id="username" type="text" class="form-control" name="userame" placeholder="User name">
+			  	</div>
+			  	<div class="input-group">
+				    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+				    <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+			  	</div>
+				<button type="submit" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-user"></span> Login</button>
 			</form>
+			<span id="login-result"></span>
 		</div>
 		<?php
+	}else{
+		echo "string";
 	}
 	?>
 </body>
