@@ -4,7 +4,7 @@ require_once('pages/inc.php');
 ?>
 <html>
 <head>
-	<title>ATK Manager - Build Version 1.0</title>
+	<title>ATK & Inventory Manager - Build Version 1.0</title>
 
 	<meta charset="utf-8">
 	<meta http-equiv="content-Type" content="text/html; charset=utf-8" />
@@ -36,7 +36,7 @@ require_once('pages/inc.php');
 				    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
 				    <input id="password" type="password" class="form-control" name="password" placeholder="Password">
 			  	</div>
-				<button type="submit" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-user"></span> Login</button>
+				<button type="submit" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-log-in"></span> Login</button>
 			</form>
 			<span id="login-result"></span>
 		</div>
