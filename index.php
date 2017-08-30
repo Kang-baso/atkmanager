@@ -1,6 +1,17 @@
 <?php
 session_start();
 require_once('pages/inc.php');
+
+if (isset($_POST['submit-login'])) {
+	$user=$_POST['username'];
+	$pass=$_POST['password'];
+	if ($user=='admin' && $pass=='admin') {
+		$_SESSION[username]=$user;
+	}else{
+		echo "salah";
+	}
+}
+
 ?>
 <html>
 <head>
@@ -27,22 +38,23 @@ require_once('pages/inc.php');
 		?>
 		<div class="container">
 			<img src="assets/img/user-icon.png"/>
-			<form id="form-login-1" action="" autocomplete="off">
+			<form id="form-login-1" method="post" action="" autocomplete="off">
 				<div class="input-group">
 				    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-				    <input id="username" type="text" class="form-control" name="userame" placeholder="User name">
+				    <input id="username" type="text" class="form-control" name="username" placeholder="User name">
 			  	</div>
 			  	<div class="input-group">
 				    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
 				    <input id="password" type="password" class="form-control" name="password" placeholder="Password">
 			  	</div>
-				<button type="submit" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-log-in"></span> Login</button>
+				<button type="submit" class="btn btn-success btn-lg" name="submit-login"><span class="glyphicon glyphicon-log-in"></span> Login</button>
 			</form>
 			<span id="login-result"></span>
 		</div>
 		<?php
 	}else{
-		echo "string";
+		echo $_SESSION['username'];
+		$_SESSION['username']='';
 	}
 	?>
 </body>

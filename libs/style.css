@@ -1,11 +1,6 @@
 /*style.css*/
 body{
-	background-image: url('../assets/img/hd-wallpaper.jpg');
-	background-position: center;
-    -webkit-background-size: cover; /* For WebKit*/
-    -moz-background-size: cover;    /* Mozilla*/
-    -o-background-size: cover;      /* Opera*/
-    background-size: cover; 
+	background-image: url('../assets/img/grids.gif');
 }
 
 .container{
