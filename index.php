@@ -77,12 +77,9 @@ if (isset($_POST['submit-login'])) {
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">File<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="?ref=divisi">Master Divisi</a></li>
-            <li><a href="#">Data Umum</a></li>
-            <li><a href="#">Keuangan</a></li>
-            <li><a href="#">Kelembagaan</a></li>
-            <li><a href="#">Keamanan & Ketertiban</a></li>
-            <li><a href="#">Lingkungan Hidup</a></li>
+            <li><a href="?ref=divisi">Master Bidang</a></li>
+            <li><a href="?ref=karyawan">Master Karyawan</a></li>
+            <li><a href="?ref=barang">Master Barang</a></li>
             <!--li role="separator" class="divider"></li>
             <li><a href="#">Separated link</a></li>
             <li role="separator" class="divider"></li>
@@ -138,6 +135,15 @@ if (isset($_GET['ref'])) {
 			break;
 		case 'divisi':
 			require_once('pages/master-divisi.php');
+			break;
+		case 'karyawan':
+			require_once('pages/master-karyawan.php');
+			break;
+		case 'barang':
+			require_once('pages/master-barang.php');
+			break;
+		case 'tambah-barang':
+			require_once('pages/tambah-barang.php');
 			break;
 		default:
 			# code...
