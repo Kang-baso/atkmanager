@@ -30,3 +30,6 @@ body{
 }
 
 .input-group-addon{min-width: 200px;}
+.hasil-submit{font-weight: bold;color: #00f;padding: 10px;}
+
+.table thead tr th{text-align:center;background-color: #ddf;}

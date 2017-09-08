@@ -9,13 +9,13 @@
 		  <input type="text" name="nama" id="kode_pum2" class="form-control" placeholder="Input nama barang" />
 		</div>
 		<div class="input-group">
-		  <span class="input-group-addon">Satuan</span>
-		  <input type="text" name="satuan" class="form-control" placeholder="Input satuan" />
+		  <span class="input-group-addon">Stok</span>
+		  <input type="text" readonly name="stok" class="form-control" placeholder="Input jumlah stok" value="0" />
 		</div>
 		<div class="input-group">
-		  <span class="input-group-addon">Stok</span>
-		  <input type="text" name="stok" class="form-control" placeholder="Input jumlah stok" />
-		</div>
+		  <span class="input-group-addon">Satuan</span>
+		  <input type="text" name="satuan" class="form-control" placeholder="Input satuan" />
+		</div>		
 		<div class="input-group">
 		  <span class="input-group-addon">Keterangan</span>
 		  <input type="text" name="ket" class="form-control" placeholder="Input keterangan tambahan" />
@@ -39,7 +39,7 @@ $(document).ready(function(){
   $('#submit').click(function(){
       $.ajax({
         type: 'post',
-        url: 'pages/simpan-barang.php',
+        url: 'pages/tambah-barang-simpan.php',
         data: $('#form').serialize(),
         success: function (response) {
             /*$('#myModal').modal('show');*/

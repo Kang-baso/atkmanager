@@ -77,9 +77,9 @@ if (isset($_POST['submit-login'])) {
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">File<span class="caret"></span></a>
           <ul class="dropdown-menu">
+            <li><a href="?ref=barang">Master Barang</a></li>
             <li><a href="?ref=divisi">Master Bidang</a></li>
             <li><a href="?ref=karyawan">Master Karyawan</a></li>
-            <li><a href="?ref=barang">Master Barang</a></li>
             <!--li role="separator" class="divider"></li>
             <li><a href="#">Separated link</a></li>
             <li role="separator" class="divider"></li>
@@ -144,6 +144,12 @@ if (isset($_GET['ref'])) {
 			break;
 		case 'tambah-barang':
 			require_once('pages/tambah-barang.php');
+			break;
+		case 'ubah-barang':
+			require_once('pages/ubah-barang.php');
+			break;
+		case 'hapus-barang':
+			require_once('pages/hapus-barang.php');
 			break;
 		default:
 			# code...
