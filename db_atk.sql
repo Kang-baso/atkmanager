@@ -31,6 +31,7 @@ CREATE TABLE `barang` (
   `jenis` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `max` int(11) NOT NULL DEFAULT '0',
   `min` int(11) NOT NULL DEFAULT '0',
+  `harga` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -41,8 +42,32 @@ CREATE TABLE `barang` (
 
 LOCK TABLES `barang` WRITE;
 /*!40000 ALTER TABLE `barang` DISABLE KEYS */;
-INSERT INTO `barang` VALUES (1,'Ballpoint hitam tinta basah','pak',54,'Khusus tanda tangan/ paraf',NULL,0,0),(2,'Ballpoint hitam tinta kering','pak',15,'keperluan umum',NULL,0,0),(7,'Pengulek sambal','buah',5,'keperluan pantry',NULL,0,0),(5,'Stempel','lembar',40,'mantap',NULL,0,0),(6,'Lampu dinding','balon',0,'rencana belanja keperluan pameran',NULL,0,0);
+INSERT INTO `barang` VALUES (1,'Ballpoint hitam tinta basah','pak',54,'Khusus tanda tangan/ paraf',NULL,0,0,0),(2,'Ballpoint hitam tinta kering','pak',15,'keperluan umum',NULL,0,0,0),(7,'Pengulek sambal','buah',5,'keperluan pantry',NULL,0,0,0),(5,'Stempel','lembar',40,'mantap',NULL,0,0,0),(6,'Lampu dinding','balon',0,'rencana belanja keperluan pameran',NULL,0,0,0);
 /*!40000 ALTER TABLE `barang` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `divisi`
+--
+
+DROP TABLE IF EXISTS `divisi`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `divisi` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ket` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `divisi`
+--
+
+LOCK TABLES `divisi` WRITE;
+/*!40000 ALTER TABLE `divisi` DISABLE KEYS */;
+/*!40000 ALTER TABLE `divisi` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -84,6 +109,7 @@ CREATE TABLE `user` (
   `password` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL,
   `telp` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id_divisi` int(11) NOT NULL,
   PRIMARY KEY (`nik`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -106,4 +132,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-09-09 14:28:40
+-- Dump completed on 2017-09-10  7:01:06
