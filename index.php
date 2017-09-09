@@ -77,9 +77,9 @@ if (isset($_POST['submit-login'])) {
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">File<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="?ref=barang">Master Barang</a></li>
-            <li><a href="?ref=divisi">Master Bidang</a></li>
-            <li><a href="?ref=karyawan">Master Karyawan</a></li>
+            <li><a href="?ref=barang">Barang</a></li>
+            <li><a href="?ref=divisi">Bidang</a></li>
+            <li><a href="?ref=karyawan">Karyawan</a></li>
             <!--li role="separator" class="divider"></li>
             <li><a href="#">Separated link</a></li>
             <li role="separator" class="divider"></li>
