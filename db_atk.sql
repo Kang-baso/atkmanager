@@ -58,7 +58,7 @@ CREATE TABLE `divisi` (
   `nama` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL,
   `ket` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -67,6 +67,7 @@ CREATE TABLE `divisi` (
 
 LOCK TABLES `divisi` WRITE;
 /*!40000 ALTER TABLE `divisi` DISABLE KEYS */;
+INSERT INTO `divisi` VALUES (1,'Non Divisi','Khusus Direksi'),(2,'Keuangan',''),(3,'Pemasaran',''),(4,'Humas','');
 /*!40000 ALTER TABLE `divisi` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -109,7 +110,9 @@ CREATE TABLE `user` (
   `password` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL,
   `telp` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `posisi` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `id_divisi` int(11) NOT NULL,
+  `nik_atasan` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`nik`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -132,4 +135,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-09-10  7:01:06
+-- Dump completed on 2017-09-10 15:12:00

@@ -136,6 +136,15 @@ if (isset($_GET['ref'])) {
 		case 'divisi':
 			require_once('pages/master-divisi.php');
 			break;
+		case 'tambah-divisi':
+			require_once('pages/tambah-divisi.php');
+			break;
+		case 'ubah-divisi':
+			require_once('pages/ubah-divisi.php');
+			break;
+		case 'hapus-divisi':
+			require_once('pages/hapus-divisi.php');
+			break;
 		case 'karyawan':
 			require_once('pages/master-karyawan.php');
 			break;
