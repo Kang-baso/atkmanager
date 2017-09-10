@@ -55,8 +55,11 @@ if (isset($_POST['submit-login'])) {
 
 
 	?>
+<div class="banner">	
+	<img src="assets/img/pln-banner-1.jpg" />	
+</div>
 
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -147,6 +150,9 @@ if (isset($_GET['ref'])) {
 			break;
 		case 'karyawan':
 			require_once('pages/master-karyawan.php');
+			break;
+		case 'tambah-user':
+			require_once('pages/tambah-user.php');
 			break;
 		case 'barang':
 			require_once('pages/master-barang.php');

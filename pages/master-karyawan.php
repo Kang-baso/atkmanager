@@ -45,6 +45,7 @@
           $i++;
         }
       }
+      $stmt->close();
 
         ?>
   		</tbody>
