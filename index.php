@@ -62,7 +62,7 @@ if (isset($_POST['submit-login'])) {
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
+    <!--div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
@@ -70,7 +70,7 @@ if (isset($_POST['submit-login'])) {
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="#">ATK Mgr</a>
-    </div>
+    </div-->
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -89,17 +89,19 @@ if (isset($_POST['submit-login'])) {
           </ul>
         </li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Data Keluarga<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Permintaan<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Profil Keluarga</a></li>
-            <li><a href="#">Profil Keluarga</a></li>
+            <li><a href="?ref=pilih-item">Pilih Item</a></li>
+            <li><a href="#">Hapus Item</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Status</a></li>
           </ul>
         </li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Potensi Kampung<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Laporan<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="?ref=sumber-daya-alam">Sumber Daya Alam</a></li>
-            <li><a href="#">Profil Keluarga</a></li>
+            <li><a href="?ref=sumber-daya-alam">Permintaan Disetujui</a></li>
+            <li><a href="#">Permintaan Ditolak</a></li>
           </ul>
         </li>
       </ul>        
@@ -137,34 +139,34 @@ if (isset($_GET['ref'])) {
 			exit(header('Location: '.base_url()));
 			break;
 		case 'divisi':
-			require_once('pages/master-divisi.php');
+			require_once('pages/view/master-divisi.php');
 			break;
 		case 'tambah-divisi':
-			require_once('pages/tambah-divisi.php');
+			require_once('pages/view/tambah-divisi.php');
 			break;
 		case 'ubah-divisi':
-			require_once('pages/ubah-divisi.php');
+			require_once('pages/view/ubah-divisi.php');
 			break;
 		case 'hapus-divisi':
-			require_once('pages/hapus-divisi.php');
+			require_once('pages/view/hapus-divisi.php');
 			break;
 		case 'karyawan':
-			require_once('pages/master-karyawan.php');
+			require_once('pages/view/master-karyawan.php');
 			break;
 		case 'tambah-user':
-			require_once('pages/tambah-user.php');
+			require_once('pages/view/tambah-user.php');
 			break;
 		case 'barang':
-			require_once('pages/master-barang.php');
+			require_once('pages/view/master-barang.php');
 			break;
 		case 'tambah-barang':
-			require_once('pages/tambah-barang.php');
+			require_once('pages/view/tambah-barang.php');
 			break;
 		case 'ubah-barang':
-			require_once('pages/ubah-barang.php');
+			require_once('pages/view/ubah-barang.php');
 			break;
 		case 'hapus-barang':
-			require_once('pages/hapus-barang.php');
+			require_once('pages/view/hapus-barang.php');
 			break;
 		default:
 			# code...

@@ -85,7 +85,7 @@ $(document).ready(function(){
   $('#submit').click(function(){
       $.ajax({
         type: 'post',
-        url: 'pages/tambah-user-simpan.php',
+        url: 'pages/model/tambah-user-simpan.php',
         data: $('#form').serialize(),
         success: function (response) {
             /*$('#myModal').modal('show');*/

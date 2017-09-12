@@ -1,5 +1,5 @@
 <?php
-require_once('inc.php');
+require_once('../inc.php');
 $conn=new mysqli(HOST,USER,PASS,DB);
 if ($conn->connect_error) die("Connection failed: " . $conn->connect_error);
 
