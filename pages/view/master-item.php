@@ -20,9 +20,16 @@ if (isset($_POST['submit'])) {
   <div class="panel-body">
     <ul class="nav nav-tabs">
 	  <li role="presentation" class="active"><a href="#">Pilih Item</a></li>
-	  <li role="presentation"><a href="?ref=ajukan-permintaan">Ajukan Permintaan (<?php echo $jml_pilih;?>)</a></li>
+	  <li role="presentation"><a href="?ref=ajukan-permintaan">Ajukan Permintaan <span class="badge"><?php echo $jml_pilih;?></span></a></li>
 	</ul>
 	<br/>
+
+<div class="input-group">
+  <input type="text" class="form-control" placeholder="Masukkan nama barang" aria-describedby="basic-addon2">
+  <span class="input-group-addon" id="basic-addon2">Pencarian</span>
+</div>
+
+	<div class="tab-content">
 	<div class="row">
 	<?php
 
@@ -37,16 +44,16 @@ if (isset($_POST['submit'])) {
 
   <div class="col-xs-6 col-md-3">
     <div class="thumbnail">
-      <img src="assets/img/item/<?php echo $row[9];?>" alt="<?php echo $row[1];?>" width="150px" height="150px" />
+      <img src="assets/img/item/<?php echo $row[9];?>" alt="<?php echo $row[1];?>" class="img-item" />
       <div class="caption">
-        <h4><?php echo ucwords($row[1]);?></h4>
+        <span class="label-judul"><?php echo ucwords($row[1]);?></span>
         <form method="post" action="">
         	<input type="hidden" name="hidden_id" value="<?php echo $row[0];?>" />
         	<div class="input-group">        		
         		<span class="input-group-addon" id="basic-addon1">Jumlah</span>
         		<input type="text" class="form-control" name="text_jml" value="1" size="5px" />
         	</div>
-        	<button type="submit" name="submit" class="btn btn-warning"><span class="glyphicon glyphicon-shopping-cart"></span> Tambahkan Ke Permintaan</button>
+        	<button type="submit" name="submit" class="btn btn-warning"><span class="glyphicon glyphicon-shopping-cart"></span> Tambahkan</button>
         </form>
       </div>
     </div>
@@ -57,6 +64,7 @@ if (isset($_POST['submit'])) {
 	}
 
 	?>
+	</div>
 	</div>
   </div>
 </div>

@@ -40,8 +40,17 @@ body{
 }
 .row{
 	padding-top: 5px;
-	background-color: #ffe;
 }
 .caption{
 	text-align: center;
+}
+.label-judul{
+	font-size: 18px;
+	font-weight: bold;
+}
+.img-item{
+	height: 150px;
+	width: 150px;
+	border:2px dashed #ccc;
+	border-radius: 5px;
 }
