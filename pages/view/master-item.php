@@ -1,11 +1,6 @@
 <?php
 $sql="";
 $jml_pilih=0;
-if (isset($_SESSION['jml_pilih'])) {
-	$jml_pilih=$_SESSION['jml_pilih'];
-}else{
-	//
-}
 
 if (isset($_POST['submit'])) {
 	$id=$_POST['hidden_id'];
@@ -28,8 +23,8 @@ if (isset($_POST['button_cari'])) {
 <div class="panel panel-default">
   <div class="panel-body">
     <ul class="nav nav-tabs">
-	  <li role="presentation" class="active"><a href="#">Pilih Item</a></li>
-	  <li role="presentation"><a href="?ref=ajukan-permintaan">Ajukan Permintaan <span class="badge"><?php echo $jml_pilih;?></span></a></li>
+	  <li role="presentation" class="active"><a href="#">Pilih Peralatan</a></li>
+	  <li role="presentation"><a href="?ref=ajukan-permintaan">Ajukan Permintaan <span class="badge" id="jml_pil">0</span></a></li>
 	</ul>
 	<!--br/-->
 
@@ -84,7 +79,7 @@ if (isset($_POST['button_cari'])) {
 		}
 	}
 	?>
-	
+
 	</div>
 	</div>
   </div>
@@ -107,3 +102,12 @@ $(document).ready(function(){
   });
 });
 </script>
+
+<?php
+if (isset($_SESSION['added_item'])) {
+	$jmls=count($_SESSION['added_item']);
+	echo "<script type=\"text/javascript\">document.getElementById('jml_pil').textContent=\"$jmls\";</script>";
+}else{
+	//
+}
+?>

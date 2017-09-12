@@ -27,6 +27,8 @@ if ( isset($_POST['hidden_id']) &&  isset($_POST['text_jml']) ) {
 			$item_array = array('id' => $id,'jml' => $jml );
 			$_SESSION['added_item'][]=$item_array;
 		}
+		$jmls=count($_SESSION['added_item']);
+		echo "<script type=\"text/javascript\">document.getElementById('jml_pil').textContent=\"$jmls\";</script>";
 	}
 	
 	/*if (strlen($id)>0) {

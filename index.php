@@ -91,7 +91,7 @@ if (isset($_POST['submit-login'])) {
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Permintaan<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="?ref=pilih-item">Pilih Item</a></li>
+            <li><a href="?ref=pilih-item">Pilih Peralatan</a></li>
             <li><a href="#">Hapus Item</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#">Status</a></li>
