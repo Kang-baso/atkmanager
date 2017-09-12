@@ -114,7 +114,7 @@ if (isset($_POST['submit-login'])) {
       <ul class="nav navbar-nav navbar-right">
         <!--li><a href="#">Link</a></li-->
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Utility <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo ucwords($_SESSION['username']);?> Utility <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="?ref=karyawan">Karyawan</a></li>
             <li><a href="#">Hak Masuk</a></li>

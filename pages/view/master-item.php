@@ -83,8 +83,8 @@ if (isset($_POST['button_cari'])) {
 	<?php
 		}
 	}
-
 	?>
+	
 	</div>
 	</div>
   </div>

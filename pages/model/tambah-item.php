@@ -8,7 +8,27 @@ if ( isset($_POST['hidden_id']) &&  isset($_POST['text_jml']) ) {
 	$id=trim($_POST['hidden_id']);
 	$jml=trim($_POST['text_jml']);
 
-	echo $id."<br/>".$jml;
+	if (strlen($jml)>0 && strval($jml)>0) {
+		#echo $id."<br/>".$jml."<br/>".$_SESSION['username'];
+
+		if (isset($_SESSION['added_item'])) {
+			$ada=0;
+			foreach ($_SESSION['added_item'] as $key => $value) {
+				if ($_SESSION['added_item'][$key]['id'] == $id) {
+					$ada++;
+					$_SESSION['added_item'][$key]['jml']+=$jml;
+				}
+			}
+			if ($ada<1) {
+				$item_array = array('id' => $id,'jml' => $jml );
+				$_SESSION['added_item'][]=$item_array;
+			}
+		}else{
+			$item_array = array('id' => $id,'jml' => $jml );
+			$_SESSION['added_item'][]=$item_array;
+		}
+	}
+	
 	/*if (strlen($id)>0) {
 		$sql="DELETE FROM divisi WHERE id=?;";
 		$stmt=$conn->prepare($sql);
