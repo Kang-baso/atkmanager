@@ -32,11 +32,11 @@ body{
 .table thead tr th{text-align:center;background-color: #ddf;}
 .banner{
 	text-align: right;
-	background-color: #000;
+	background: linear-gradient(to right,#000,#555,#777,#888,#999,#aaa,#bbb,#fff,#fff, #fff, #fff);
 }
 .banner img{
-	width: 150px;
-	margin:2px;
+	width: 200px;
+	margin:0px;	
 }
 .row{
 	padding-top: 5px;

@@ -55,7 +55,7 @@ if (isset($_POST['submit-login'])) {
 
 
 	?>
-<div class="banner">	
+<div class="banner">
 	<img src="assets/img/pln-banner-1.jpg" />	
 </div>
 

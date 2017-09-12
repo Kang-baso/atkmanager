@@ -64,7 +64,8 @@ if (isset($_POST['button_cari'])) {
       <div class="caption">
         <span class="label-judul"><?php echo ucwords($row[1]);?></span>
         <form method="post" autocomplete="off" action="" id="form<?php echo $row[0];?>">
-        	<input type="hidden" name="hidden_id" value="<?php echo $row[0];?>" />
+          <input type="hidden" name="hidden_id" value="<?php echo $row[0];?>" />
+        	<input type="hidden" name="hidden_nama" value="<?php echo ucwords($row[1]);?>" />
         	<div class="input-group">        		
         		<span class="input-group-addon" id="basic-addon1">Jumlah</span>
         		<input type="text" class="form-control" name="text_jml" value="1" size="5px" />
