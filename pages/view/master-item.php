@@ -1,4 +1,5 @@
 <?php
+$sql="";
 $jml_pilih=0;
 if (isset($_SESSION['jml_pilih'])) {
 	$jml_pilih=$_SESSION['jml_pilih'];
@@ -15,6 +16,14 @@ if (isset($_POST['submit'])) {
 	}
 }
 
+if (isset($_POST['button_cari'])) {
+	$text_cari=$_POST['text_cari'];
+	$text_cari=trim($text_cari);
+	if (strlen($text_cari)>0) {
+		$sql="SELECT id, nama, satuan, stok, ket, jenis, max, min, harga, img FROM barang WHERE nama like '%".$text_cari."%' ORDER BY nama ASC;";
+	}
+}
+
 ?>
 <div class="panel panel-default">
   <div class="panel-body">
@@ -22,19 +31,31 @@ if (isset($_POST['submit'])) {
 	  <li role="presentation" class="active"><a href="#">Pilih Item</a></li>
 	  <li role="presentation"><a href="?ref=ajukan-permintaan">Ajukan Permintaan <span class="badge"><?php echo $jml_pilih;?></span></a></li>
 	</ul>
-	<br/>
+	<!--br/-->
 
-<div class="input-group">
-  <input type="text" class="form-control" placeholder="Masukkan nama barang" aria-describedby="basic-addon2">
-  <span class="input-group-addon" id="basic-addon2">Pencarian</span>
+<center>
+    <span class="hasil-submit"></span>
+</center>
+
+<form method="post" action="" autocomplete="off">
+<div class="row">
+	<div class="col-lg-12">
+    <div class="input-group">
+      <input type="text" name="text_cari" class="form-control" placeholder="Pencarian berdasarkan nama barang / item...">
+      <span class="input-group-btn">
+        <button class="btn btn-warning" type="submit" name="button_cari"><span class="glyphicon glyphicon-search"></span>&nbsp;</button>
+      </span>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
 </div>
+</form>
 
 	<div class="tab-content">
 	<div class="row">
 	<?php
 
 	$i=1;
-	$sql="SELECT id, nama, satuan, stok, ket, jenis, max, min, harga, img FROM barang ORDER BY nama ASC;";
+	if($sql=='')$sql="SELECT id, nama, satuan, stok, ket, jenis, max, min, harga, img FROM barang ORDER BY nama ASC;";
 
 	$stmt=$conn->prepare($sql);
 	if ($stmt->execute()) {
@@ -47,13 +68,13 @@ if (isset($_POST['submit'])) {
       <img src="assets/img/item/<?php echo $row[9];?>" alt="<?php echo $row[1];?>" class="img-item" />
       <div class="caption">
         <span class="label-judul"><?php echo ucwords($row[1]);?></span>
-        <form method="post" action="">
+        <form method="post" autocomplete="off" action="" id="form<?php echo $row[0];?>">
         	<input type="hidden" name="hidden_id" value="<?php echo $row[0];?>" />
         	<div class="input-group">        		
         		<span class="input-group-addon" id="basic-addon1">Jumlah</span>
         		<input type="text" class="form-control" name="text_jml" value="1" size="5px" />
         	</div>
-        	<button type="submit" name="submit" class="btn btn-warning"><span class="glyphicon glyphicon-shopping-cart"></span> Tambahkan</button>
+        	<button type="button" name="submit<?php echo $row[0];?>" id="<?php echo $row[0];?>" class="btn btn-warning tambahkan"><span class="glyphicon glyphicon-shopping-cart"></span> Tambahkan</button>
         </form>
       </div>
     </div>
@@ -68,3 +89,21 @@ if (isset($_POST['submit'])) {
 	</div>
   </div>
 </div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.tambahkan').click(function(){
+  	var id=$(this).attr('id');
+  	/*alert(form_id);*/
+  	$.ajax({
+        type: 'post',
+        url: 'pages/model/tambah-item.php',
+        data: $('#form'+id).serialize(),
+        success: function (response) {
+            /*$('#myModal').modal('show');*/
+            $(".hasil-submit").html(response);
+        }
+      });
+  });
+});
+</script>
