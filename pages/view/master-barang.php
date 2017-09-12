@@ -28,8 +28,8 @@
 				while ($row = $result->fetch_row()){
 					echo "
 					<tr>
-		  				<td>$i</td>
-		  				<td>$row[1]</td>
+		  				<td>$i</td>              
+              <td>".ucwords($row[1])."</td>
 		  				<td>$row[2]</td>
 		  				<td>$row[3]</td>
 		  				<td>$row[4]</td>

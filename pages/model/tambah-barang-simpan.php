@@ -4,8 +4,8 @@ $conn=new mysqli(HOST,USER,PASS,DB);
 if ($conn->connect_error) die("Connection failed: " . $conn->connect_error);
 
 if ( isset($_POST['nama']) && isset($_POST['satuan']) && isset($_POST['stok']) && isset($_POST['ket']) ) {
-	$nama=trim($_POST['nama']);
-	$satuan=trim($_POST['satuan']);
+	$nama=trim($_POST['nama']);$nama=ucwords($nama);
+	$satuan=trim($_POST['satuan']);$satuan=strtoupper($satuan);
 	$stok=trim($_POST['stok']);
 	$ket=trim($_POST['ket']);
 
