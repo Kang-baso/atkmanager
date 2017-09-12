@@ -168,6 +168,12 @@ if (isset($_GET['ref'])) {
 		case 'hapus-barang':
 			require_once('pages/view/hapus-barang.php');
 			break;
+		case 'pilih-item':
+			require_once('pages/view/master-item.php');
+			break;
+		case 'ajukan-permintaan':
+			require_once('pages/view/ajukan-permintaan.php');
+			break;
 		default:
 			# code...
 			break;
