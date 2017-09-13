@@ -89,12 +89,12 @@ if (isset($_POST['submit-login'])) {
           </ul>
         </li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Permintaan<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Proses<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="?ref=pilih-item">Pilih Peralatan</a></li>
-            <li><a href="#">Hapus Item</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Status</a></li>
+            <li><a href="?ref=list-permintaan">List Permintaan <span class="glyphicon glyphicon-envelope"></span></a></li>
+            <li><a href="?ref=review-permintaan">Review Permintaan</a></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -175,6 +175,9 @@ if (isset($_GET['ref'])) {
 			break;
 		case 'ajukan-permintaan':
 			require_once('pages/view/ajukan-permintaan.php');
+			break;
+		case 'list-permintaan':
+			require_once('pages/view/list-permintaan.php');
 			break;
 		default:
 			# code...
