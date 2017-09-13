@@ -114,7 +114,7 @@ if (isset($_POST['submit-login'])) {
       <ul class="nav navbar-nav navbar-right">
         <!--li><a href="#">Link</a></li-->
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo ucwords($_SESSION['username']);?> Utility <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo ucwords($_SESSION['username']);?> Setting <span class="glyphicon glyphicon-cog"></span> <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="?ref=karyawan">Karyawan</a></li>
             <li><a href="#">Hak Masuk</a></li>
@@ -135,7 +135,9 @@ if (isset($_GET['ref'])) {
 	$ref=$_GET['ref'];
 	switch ($ref) {
 		case 'log-out':
-			$_SESSION['username']='';
+			if(isset($_SESSION['username']))unset($_SESSION['username']);
+			if(isset($_SESSION['added_item']))unset($_SESSION['added_item']);
+			session_destroy();
 			exit(header('Location: '.base_url()));
 			break;
 		case 'divisi':

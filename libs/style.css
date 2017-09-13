@@ -20,7 +20,9 @@ body{
 	margin-bottom: 30px;
 }
 
-
+.table{
+	/*background-color: #fff;*/
+}
 
 .input-group{
 	margin-bottom: 5px;
@@ -30,14 +32,18 @@ body{
 .hasil-submit{font-weight: bold;color: #00f;padding: 10px;}
 
 .table thead tr th{text-align:center;background-color: #ddf;}
+
+
 .banner{
 	text-align: right;
-	background: linear-gradient(to right,#000,#555,#777,#888,#999,#aaa,#bbb,#fff,#fff, #fff, #fff);
+	background: linear-gradient(to right,#000,#333,#555,#888,#999,#aaa,#bbb,#fff,#fff, #fff, #fff);
 }
 .banner img{
-	width: 200px;
+	width: 150px;
 	margin:0px;	
 }
+
+
 .row{
 	padding-top: 5px;
 }
