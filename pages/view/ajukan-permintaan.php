@@ -1,4 +1,6 @@
 <?php
+$is_submit="";
+
 if (isset($_SESSION['added_item'])) {	
 	if (isset($_GET['del'])) {
 		$id=$_GET['del'];
@@ -8,8 +10,7 @@ if (isset($_SESSION['added_item'])) {
 			}
 		}
 	}
-
-	$is_submit="";
+	
 	if (isset($_POST['submit_atk'])) {
 		$nomor=$_POST['text_nomor'];$ket=trim($nomor);
 		$ket=$_POST['text_ket'];$ket=trim($ket);
@@ -20,7 +21,7 @@ if (isset($_SESSION['added_item'])) {
 			$stmt->bind_param('sss',$nomor,$ket,$nik);
 			if ($stmt->execute()) {
 				$is_submit="Data berhasil di-posting ke List Permintaan ATK !";
-				unset($_SESSION['added_item'];
+				unset($_SESSION['added_item']);
 			}
 		}
 
