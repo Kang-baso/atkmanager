@@ -193,3 +193,16 @@ if (isset($_GET['ref'])) {
 <?php
 $conn->close();
 ?>
+
+<!--
+AKTIVASI PELANGGAN DIHAPUS
+misal nomor '000123'
+pada server 0.100:
+insert ignore into hapus_2504.master_aktifkan select * from hapus_2504.master where nomor='000123';
+insert ignore into billing.master select * from hapus_2504.master where nomor='000123';
+insert ignore into billing.transaksi select * from hapus_2504.transaksi where nomor='000123';
+insert ignore into billing.rekening1 select * from hapus_2504.rekening1 where nomor='000123';
+update billing.master set nu=current_date();
+
+Transver data pelanggan ke masing2 upp melalui aplikasi. di menu utility/transver ke loket external agar data pelanggan bisa terdistribusi
+-->

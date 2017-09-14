@@ -34,7 +34,7 @@ CREATE TABLE `barang` (
   `harga` double NOT NULL DEFAULT '0',
   `img` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'no-image.png',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +43,7 @@ CREATE TABLE `barang` (
 
 LOCK TABLES `barang` WRITE;
 /*!40000 ALTER TABLE `barang` DISABLE KEYS */;
-INSERT INTO `barang` VALUES (1,'Ballpoint hitam tinta basah','pak',54,'Khusus tanda tangan/ paraf',NULL,0,0,0,'no-image.png'),(2,'Ballpoint hitam tinta kering','pak',15,'keperluan umum',NULL,0,0,0,'no-image.png'),(7,'Pengulek sambal','buah',5,'keperluan pantry',NULL,0,0,0,'no-image.png'),(5,'Stempel','lembar',40,'mantap',NULL,0,0,0,'no-image.png'),(6,'Lampu dinding','balon',0,'rencana belanja keperluan pameran',NULL,0,0,0,'no-image.png'),(8,'Kertas HVS','Pack',0,'',NULL,0,0,0,'no-image.png'),(9,'hekter','buah',0,'',NULL,0,0,0,'no-image.png');
+INSERT INTO `barang` VALUES (1,'Ballpoint hitam tinta basah','pak',54,'Khusus tanda tangan/ paraf',NULL,0,0,0,'ballpoint-black.jpg'),(2,'Ballpoint hitam tinta kering','pak',15,'keperluan umum',NULL,0,0,0,'no-image.png'),(7,'Lakban','BUAH',7,'keperluan pantry',NULL,0,0,0,'no-image.png'),(5,'Stempel','lembar',40,'mantap',NULL,0,0,0,'no-image.png'),(6,'Penghapus Pencil','DOS',0,'Keperluan gambar',NULL,0,0,0,'no-image.png'),(8,'Kertas HVS','PAK',0,'',NULL,0,0,0,'no-image.png'),(9,'hekter','buah',0,'',NULL,0,0,0,'no-image.png'),(10,'Spidol Hitam','DOS',0,'',NULL,0,0,0,'no-image.png'),(11,'Spidol Biru','DOS',0,'',NULL,0,0,0,'no-image.png'),(12,'Penggaris Lurus','DOS',0,'',NULL,0,0,0,'no-image.png'),(13,'Kertas Postit','DOS',0,'',NULL,0,0,0,'no-image.png'),(14,'Penggaris Segi Tiga','PAK',0,'',NULL,0,0,0,'no-image.png');
 /*!40000 ALTER TABLE `barang` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -95,7 +95,35 @@ CREATE TABLE `permintaan` (
 
 LOCK TABLES `permintaan` WRITE;
 /*!40000 ALTER TABLE `permintaan` DISABLE KEYS */;
+INSERT INTO `permintaan` VALUES ('nomor-12345','tes tes saja bos',0,'2017-09-13 13:32:51','0123456789'),('4545-yajshdf','rutin',0,'2017-09-13 13:37:49','0123456789'),('1111-tambahan-2017','tambahan bos',0,'2017-09-13 13:48:25','0123456789');
 /*!40000 ALTER TABLE `permintaan` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `permintaan_d`
+--
+
+DROP TABLE IF EXISTS `permintaan_d`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `permintaan_d` (
+  `nomor_permintaan` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id_barang` int(11) NOT NULL,
+  `jml_minta` int(11) NOT NULL,
+  `jml_setuju` int(11) NOT NULL DEFAULT '0',
+  `ket_tolak` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '-',
+  PRIMARY KEY (`nomor_permintaan`,`id_barang`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `permintaan_d`
+--
+
+LOCK TABLES `permintaan_d` WRITE;
+/*!40000 ALTER TABLE `permintaan_d` DISABLE KEYS */;
+INSERT INTO `permintaan_d` VALUES ('nomor-12345',11,3,0,'-'),('nomor-12345',6,2,0,'-'),('nomor-12345',10,4,0,'-'),('nomor-12345',5,1,0,'-'),('4545-yajshdf',1,3,0,'-'),('4545-yajshdf',2,2,0,'-'),('4545-yajshdf',9,1,0,'-'),('1111-tambahan-2017',13,4,0,'-'),('1111-tambahan-2017',7,6,0,'-'),('1111-tambahan-2017',12,3,0,'-');
+/*!40000 ALTER TABLE `permintaan_d` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -163,4 +191,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-09-12 10:25:40
+-- Dump completed on 2017-09-14 14:44:42
