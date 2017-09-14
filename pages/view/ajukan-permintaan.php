@@ -13,7 +13,7 @@ if (isset($_SESSION['added_item'])) {
 	
 	if (isset($_POST['submit_atk'])) {
 		$nomor=$_POST['text_nomor'];$ket=trim($nomor);
-		$ket=$_POST['text_ket'];$ket=trim($ket);
+		$ket=$_POST['text_ket'];$ket=trim($ket);$ket=ucfirst($ket);
 		$nik="0123456789";
 
 		$is_fix=0;
@@ -43,12 +43,17 @@ if (isset($_SESSION['added_item'])) {
 			#echo $vsql;
 
 			$stmt=$conn->prepare($vsql);
-			if ($stmt->execute()) {
-				$is_fix++;
+			if ($is_fix>0) {
+				if ($stmt->execute()) {
+					$is_fix++;
+				}
 			}
 
 			if ($is_fix>=2) {
 				$is_submit="Data berhasil di-posting ke List Permintaan ATK !";
+				unset($_SESSION['added_item']);
+			}else{
+				$is_submit="Data Gagal di-posting ke List Permintaan ATK, silahkan melakukan entry kembali !";
 				unset($_SESSION['added_item']);
 			}
 

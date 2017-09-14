@@ -1,6 +1,26 @@
 /*style.css*/
 body{
 	background-image: url('../assets/img/grids.gif');
+	margin-bottom:20px;
+	margin-top: 50px;
+}
+
+#header {
+    position: fixed;
+    height: 50px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index:10000;
+}
+
+.banner{
+	text-align: right;
+	background: linear-gradient(to right,#000,#333,#555,#888,#999,#aaa,#bbb,#fff,#fff, #fff, #fff);
+}
+.banner img{
+	width: 150px;
+	margin:0px;	
 }
 
 .container{
@@ -20,6 +40,20 @@ body{
 	margin-bottom: 30px;
 }
 
+#break-point {
+    position: fixed;
+    height: 20px;
+    background: linear-gradient(to right,#000,#333,#555,#888,#999,#aaa,#bbb,#ccc,#ddd, #ddd, #eee);
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+    text-align: center;
+    font-size: 75%;
+    z-index:10001;        
+}
+#break-point a {color: #333;}
+
 .table{
 	/*background-color: #fff;*/
 }
@@ -32,16 +66,6 @@ body{
 .hasil-submit{font-weight: bold;color: #00f;padding: 10px;}
 
 .table thead tr th{text-align:center;background-color: #ddf;}
-
-
-.banner{
-	text-align: right;
-	background: linear-gradient(to right,#000,#333,#555,#888,#999,#aaa,#bbb,#fff,#fff, #fff, #fff);
-}
-.banner img{
-	width: 150px;
-	margin:0px;	
-}
 
 
 .row{
