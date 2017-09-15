@@ -29,11 +29,11 @@
 	  					?>
 	  			<tr>
 	  				<td align="center"><?php echo $i;?></td>
-	  				<td><a href="#" title="Tampilkan detail"><?php echo $row[0];?></a></td>
+	  				<td><?php echo $row[0];?></td>
 	  				<td><?php echo $row[1];?></td>
 	  				<td align="center"><?php echo $row[3];?></td>
 	  				<td align="center"><?php echo $row[4];?></td>
-	  				<td align="center"><?php echo get_status($row[2]);?></td>
+	  				<td align="center"><a href="#" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-hand-right"></span>&nbsp;<?php echo get_status($row[2]);?></a></td>
 	  			</tr>
 	  					<?php
 	  					$i++;

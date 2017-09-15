@@ -2,8 +2,9 @@
 body{
 	background-image: url('../assets/img/grids.gif');
 	margin-bottom:20px;
-	margin-top: 50px;
+	margin-top: 50px;	
 }
+.kontenxx{color: #777;}
 
 #header {
     position: fixed;
@@ -24,7 +25,7 @@ body{
 }
 
 .container{
-	height: 400px;
+	height: 310px;
 	width: 500px;
 	text-align: center;
 	background-color: rgba(52,73,94,0.7);
@@ -65,7 +66,7 @@ body{
 .input-group-addon{min-width: 200px;}
 .hasil-submit{font-weight: bold;color: #00f;padding: 10px;}
 
-.table thead tr th{text-align:center;background-color: #ddf;}
+.table thead tr th{color:#777;text-align:center;background: linear-gradient(#ddf,#aac);}
 
 
 .row{

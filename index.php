@@ -5,16 +5,6 @@ require_once('pages/inc.php');
 $conn=new mysqli(HOST,USER,PASS,DB);
 if ($conn->connect_error) die("Connection failed: " . $conn->connect_error);
 
-if (isset($_POST['submit-login'])) {
-	$user=$_POST['username'];
-	$pass=$_POST['password'];
-	if ($user=='admin' && $pass=='admin') {
-		$_SESSION['username']=$user;
-	}else{
-		echo "salah";
-	}
-}
-
 ?>
 <html>
 <head>
@@ -27,10 +17,69 @@ if (isset($_POST['submit-login'])) {
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
 	<link rel="stylesheet" href="libs/style.css" />
 </head>
 <body>
 	<?php
+
+if (isset($_POST['submit-login'])) {
+	$user=$_POST['username'];$user=trim($user);
+	$pass=$_POST['password'];$pass=trim($pass);
+	$sql="SELECT DISTINCT u.nik, u.nama, u.password, u.telp, u.email, u.posisi, u.id_divisi, u.nik_atasan, r.id,r.nama FROM user AS u LEFT OUTER JOIN role AS r ON r.id=u.id_role WHERE u.nik=? AND u.password=md5(?);";
+	$stmt=$conn->prepare($sql);
+	$stmt->bind_param('ss',$user,$pass);
+	$stmt->execute();
+	$result = $stmt->get_result();
+	if ($result->num_rows>0) {
+	#if ($user=='admin' && $pass=='admin') {
+		if ($row=$result->fetch_row()) {
+			$_SESSION['nik']=$row[0];
+			$_SESSION['username']=$row[1];			
+			$_SESSION['id_divisi']=$row[6];
+			$_SESSION['role_id']=$row[8];
+			$_SESSION['role_name']=$row[9];
+
+			$sql="INSERT IGNORE INTO user_logged(nik,nama)VALUES(?,?)";
+			$stmt1=$conn->prepare($sql);
+			$stmt1->bind_param('ss',$_SESSION['nik'],$_SESSION['username']);
+			$stmt1->execute();
+			$stmt1->close();
+		}		
+	}else{
+		?>
+
+<script type="text/javascript">
+	  $( function() {
+    $( "#dialog-message" ).dialog({
+      modal: true,
+      buttons: {
+        Ok: function() {
+          $( this ).dialog( "close" );
+        }
+      }
+    });
+  } );
+</script>
+
+<div id="dialog-message" title="Notifikasi">
+  <p>
+    <span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 50px 0;"></span>
+    Login gagal.
+  </p>
+  <p>
+    Kombinasi <i>username</i> dan <i>password</i> salah.
+  </p>
+</div>
+		<?php
+		$stmt->close();
+	}
+}
+
+
+
 	if (!isset($_SESSION['username']) || $_SESSION['username']=='') {
 		?>
 		<div class="container">
@@ -38,7 +87,7 @@ if (isset($_POST['submit-login'])) {
 			<form id="form-login-1" method="post" action="" autocomplete="off">
 				<div class="input-group">
 				    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-				    <input id="username" type="text" class="form-control" name="username" placeholder="User name">
+				    <input id="username" type="text" class="form-control" name="username" placeholder="Nomor Induk Karyawan">
 			  	</div>
 			  	<div class="input-group">
 				    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
@@ -78,10 +127,13 @@ if (isset($_POST['submit-login'])) {
         <!--li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
         <li><a href="#">Link</a></li-->
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">File<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Berkas<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="?ref=barang">Barang</a></li>
             <li><a href="?ref=divisi">Bidang</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="?ref=vendor">Vendor</a></li>
+            <li><a href="#">Barang Masuk</a></li>
             <!--li role="separator" class="divider"></li>
             <li><a href="#">Separated link</a></li>
             <li role="separator" class="divider"></li>
@@ -90,18 +142,19 @@ if (isset($_POST['submit-login'])) {
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Proses<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="?ref=pilih-item">Pilih Peralatan</a></li>
+          <ul class="dropdown-menu">            <li><a href="?ref=pilih-item">Buat Permintaan</a></li>
+            <li><a href="#">Batalkan Permintaan</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="?ref=list-permintaan">List Permintaan <span class="glyphicon glyphicon-envelope"></span></a></li>
-            <li><a href="?ref=review-permintaan">Review Permintaan</a></li>
           </ul>
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Laporan<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="?ref=sumber-daya-alam">Permintaan Disetujui</a></li>
-            <li><a href="#">Permintaan Ditolak</a></li>
+            <li><a href="?ref=hasil-review">Hasil Review</a></li>
+            <li><a href="#">Rekap Permintaan</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Inventory</a></li>
           </ul>
         </li>
       </ul>        
@@ -112,9 +165,12 @@ if (isset($_POST['submit-login'])) {
         <button type="submit" class="btn btn-default">Submit</button>
       </form-->
       <ul class="nav navbar-nav navbar-right">
+      	<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo "Selamat Datang <strong>".ucwords($_SESSION['username'])."</strong> (".ucwords($_SESSION['role_name']).")";?></a>
+        </li>
         <!--li><a href="#">Link</a></li-->
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo ucwords($_SESSION['username']);?> Setting <span class="glyphicon glyphicon-cog"></span> <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pengaturan <span class="glyphicon glyphicon-cog"></span> <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="?ref=karyawan">Karyawan</a></li>
             <li><a href="#">Hak Masuk</a></li>
@@ -128,7 +184,7 @@ if (isset($_POST['submit-login'])) {
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
+<div class="konten">
 	<?php
 
 if (isset($_GET['ref'])) {
@@ -186,8 +242,10 @@ if (isset($_GET['ref'])) {
 }
 
 	}
-	break_point();
+	
 	?>
+</div>
+<?php break_point();?>
 </body>
 </html>
 

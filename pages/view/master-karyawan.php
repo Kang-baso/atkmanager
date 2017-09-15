@@ -31,15 +31,15 @@
           echo "
           <tr>
               <td>$i</td>
-              <td>$row[0]</td>
+              <td align=\"center\">$row[0]</td>
               <td>$row[1]</td>
-              <td>$row[3]</td>
-              <td>$row[4]</td>
-              <td>$row[5]</td>
-              <td>$row[6]</td>
+              <td align=\"center\">$row[3]</td>
+              <td align=\"center\">$row[4]</td>
+              <td align=\"center\">$row[5]</td>
+              <td align=\"center\">$row[6]</td>
               <td>$row[7]</td>
-              <td><a href=\"?ref=hapus-user&id=$row[0]&nama=$row[1]&ket=$row[3]\" class=\"btn btn-sm btn-danger\"><span class=\"glyphicon glyphicon-trash\"></span></a></td>
-              <td><a href=\"?ref=ubah-user&id=$row[0]&nama=$row[1]&ket=$row[3]\" class=\"btn btn-sm btn-warning\"><span class=\"glyphicon glyphicon-pencil\"></span></a></td>
+              <td align=\"center\"><a href=\"?ref=hapus-user&id=$row[0]&nama=$row[1]&ket=$row[3]\" class=\"btn btn-sm btn-danger\"><span class=\"glyphicon glyphicon-trash\"></span></a></td>
+              <td align=\"center\"><a href=\"?ref=ubah-user&id=$row[0]&nama=$row[1]&ket=$row[3]\" class=\"btn btn-sm btn-warning\"><span class=\"glyphicon glyphicon-pencil\"></span></a></td>
             </tr>
           ";
           $i++;
