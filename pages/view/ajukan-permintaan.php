@@ -14,7 +14,7 @@ if (isset($_SESSION['added_item'])) {
 	if (isset($_POST['submit_atk'])) {
 		$nomor=$_POST['text_nomor'];$ket=trim($nomor);
 		$ket=$_POST['text_ket'];$ket=trim($ket);$ket=ucfirst($ket);
-		$nik="0123456789";
+		$nik=$_SESSION['nik'];
 
 		$is_fix=0;
 		$vsql="INSERT INTO permintaan_d(nomor_permintaan,id_barang,jml_minta,jml_setuju,ket_tolak)VALUES";
