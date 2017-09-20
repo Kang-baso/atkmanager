@@ -19,11 +19,11 @@ if (isset($_GET['id'])
   		<input type="hidden" name="id" value="<?php echo $id;?>" />  	
     <div class="input-group">
       <span class="input-group-addon">Nomor</span>
-      <input type="text" readonly name="id" class="form-control"value="<?php echo strtoupper($id);?>" />
+      <input type="text" readonly name="id" class="form-control" value="<?php echo strtoupper($id);?>" />
     </div>
 		<div class="input-group">
 		  <span class="input-group-addon">Keterangan</span>
-		  <input type="text" readonly name="ket" class="form-control"value="<?php echo $ket;?>" />
+		  <input type="text" readonly name="ket" class="form-control" value="<?php echo $ket;?>" />
 		</div>
     <div class="input-group">
       <span class="input-group-addon">Tanggal Posting</span>

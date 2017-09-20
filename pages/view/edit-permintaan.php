@@ -32,13 +32,21 @@
 	  					?>
 	  			<tr>
 	  				<td align="center"><?php echo $i;?></td>
-	  				<td><a href="?ref=detail-permintaan&id=<?php echo $row[0];?>" title="Lihat detail..."><?php echo $row[0];?></a></td>
+	  				<td><a href="?ref=detail-permintaan&id=<?php echo $row[0];?>" title="Lihat detail..."><strong><?php echo $row[0];?></strong></a></td>
 	  				<td><?php echo $row[1];?></td>
 	  				<td align="center"><?php echo $row[3];?></td>
 	  				<td align="center"><?php echo $row[4];?></td>
 	  				<td align="center" title="hapus"><a href="<?php echo "?ref=hapus-permintaan&id=$row[0]&ket=$row[1]&tgl=$row[3]&div=$row[4]";?>" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></a></td>
 	  				<td align="center" title="ubah"><a href="?ref=ubah-permintaan&id=<?php echo $row[0];?>" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></a></td>
-	  				<td align="center" title="cetak"><a href="?ref=cetak-permintaan&id=<?php echo $row[0];?>" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-print"></span></a></td>
+	  				<td align="center" title="cetak">
+	  					<form method="post" target="_blank" action="<?php echo base_url()."pages/view/cetak-permintaan.php";?>">
+	  						<input type="hidden" name="id" value="<?php echo $row[0];?>" />
+	  						<input type="hidden" name="ket" value="<?php echo $row[1];?>" />
+	  						<input type="hidden" name="tgl" value="<?php echo $row[3];?>" />
+	  						<input type="hidden" name="div" value="<?php echo $row[4];?>" />
+	  						<button type="submit" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-print"></span></button>
+	  					</form>
+	  				</td>
 	  			</tr>
 	  					<?php
 	  					$i++;

@@ -21,6 +21,14 @@ if ($conn->connect_error) die("Connection failed: " . $conn->connect_error);
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 	<link rel="stylesheet" href="libs/style.css" />
+
+  <script type="text/javascript" src="libs/export/tableExport.js"></script>
+  <script type="text/javascript" src="libs/export/jquery.base64.js"></script>
+  <script type="text/javascript" src="libs/export/jspdf/libs/sprintf.js"></script>
+  <script type="text/javascript" src="libs/export/jspdf/jspdf.js"></script>
+  <script type="text/javascript" src="libs/export/jspdf/libs/base64.js"></script>
+
+
 </head>
 <body>
 	<?php
@@ -181,7 +189,7 @@ if (isset($_POST['submit-login'])) {
             <li role="separator" class="divider"></li>
             <li><a href="#">Panduan</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="?ref=log-out">Keluar</a></li>
+            <li><a href="?ref=log-out">Keluar <span class="glyphicon glyphicon-log-out"></span></a></li>
           </ul>
         </li>
       </ul>
@@ -204,14 +212,5 @@ $conn->close();
 ?>
 
 <!--
-AKTIVASI PELANGGAN DIHAPUS
-misal nomor '000123'
-pada server 0.100:
-insert ignore into hapus_2504.master_aktifkan select * from hapus_2504.master where nomor='000123';
-insert ignore into billing.master select * from hapus_2504.master where nomor='000123';
-insert ignore into billing.transaksi select * from hapus_2504.transaksi where nomor='000123';
-insert ignore into billing.rekening1 select * from hapus_2504.rekening1 where nomor='000123';
-update billing.master set nu=current_date();
-
-Transver data pelanggan ke masing2 upp melalui aplikasi. di menu utility/transver ke loket external agar data pelanggan bisa terdistribusi
+<input type="button" name="export" value="Export to Excel" onClick ="$('#table-hasil').tableExport({type:'excel',escape:'false',htmlContent:'true'});" style="color:#00f;font-size:12px;font-weight:bold;padding:0px;"/>
 -->

@@ -1,0 +1,84 @@
+/*style.css*/
+body{
+}
+.kontenxx{color: #777;}
+
+#header {
+    position: fixed;
+    height: 50px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index:10000;
+}
+
+.banner{
+	text-align: right;
+	background: linear-gradient(to right,#000,#333,#555,#888,#999,#aaa,#bbb,#fff,#fff, #fff, #fff);
+}
+.banner img{
+	width: 150px;
+	margin:0px;	
+}
+
+.container{
+	height: 310px;
+	width: 500px;
+	text-align: center;
+	background-color: rgba(52,73,94,0.7);
+	border-radius: 4px;
+	margin:0 auto;
+	margin-top: 150px;
+}
+
+.container img{
+	height: 200px;
+	width: 200px;
+	margin-top:-60px;
+	margin-bottom: 30px;
+}
+
+#break-point {
+    position: fixed;
+    height: 20px;
+    background: linear-gradient(to right,#000,#333,#555,#888,#999,#aaa,#bbb,#ccc,#ddd, #ddd, #eee);
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+    text-align: center;
+    font-size: 75%;
+    z-index:10001;        
+}
+#break-point a {color: #333;}
+
+.table{
+	/*background-color: #fff;*/
+}
+
+.input-group{
+	margin-bottom: 0px;
+}
+
+.input-group-addon{min-width: 200px;}
+.hasil-submit{font-weight: bold;color: #00f;padding: 10px;}
+
+.table thead tr th{color:#777;text-align:center;background: linear-gradient(#ddf,#aac);}
+
+
+.row{
+	padding-top: 5px;
+}
+.caption{
+	text-align: center;
+}
+.label-judul{
+	font-size: 18px;
+	font-weight: bold;
+}
+.img-item{
+	height: 150px;
+	width: 150px;
+	border:2px dashed #ccc;
+	border-radius: 5px;
+}
