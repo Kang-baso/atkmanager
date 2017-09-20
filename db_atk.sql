@@ -124,7 +124,7 @@ CREATE TABLE `permintaan` (
 
 LOCK TABLES `permintaan` WRITE;
 /*!40000 ALTER TABLE `permintaan` DISABLE KEYS */;
-INSERT INTO `permintaan` VALUES ('nomor-12345','tes tes saja bos',0,'2017-09-13 13:32:51','0123456789'),('4545-yajshdf','rutin',0,'2017-09-13 13:37:49','0123456789'),('1111-tambahan-2017','tambahan bos',0,'2017-09-13 13:48:25','0123456789'),('123456-jsdhfkjsfhksfh-xdfdfdf','Permintaan Beruntun',0,'2017-09-14 06:26:11','0123456789'),('8451-cfgfg','Tadi tonk lupa',0,'2017-09-14 06:42:46','0123456789'),('666-pertamax','Permintaan rutin',0,'2017-09-16 22:35:49','0123456789'),('SP/I/IX/2017','Rutin Bulanan',0,'2017-09-20 06:46:17','123456');
+INSERT INTO `permintaan` VALUES ('nomor-12345','tes tes saja bos',0,'2017-09-13 13:32:51','0123456789'),('4545-yajshdf','rutin',0,'2017-09-13 13:37:49','0123456789'),('1111-tambahan-2017','tambahan bos',0,'2017-09-13 13:48:25','0123456789'),('123456-jsdhfkjsfhksfh-xdfdfdf','Permintaan Beruntun',0,'2017-09-14 06:26:11','0123456789'),('8451-cfgfg','Tadi tonk lupa',0,'2017-09-14 06:42:46','0123456789'),('666-pertamax','Permintaan rutin',0,'2017-09-16 22:35:49','0123456789'),('SP/I/IX/2017','Rutin Bulanan',0,'2017-09-20 06:46:17','123456'),('SP/II/IX/2017','Berikut',0,'2017-09-20 10:12:23','123456');
 /*!40000 ALTER TABLE `permintaan` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -151,7 +151,7 @@ CREATE TABLE `permintaan_d` (
 
 LOCK TABLES `permintaan_d` WRITE;
 /*!40000 ALTER TABLE `permintaan_d` DISABLE KEYS */;
-INSERT INTO `permintaan_d` VALUES ('nomor-12345',11,3,0,'-'),('nomor-12345',6,2,0,'-'),('nomor-12345',10,4,0,'-'),('nomor-12345',5,1,0,'-'),('4545-yajshdf',1,3,0,'-'),('4545-yajshdf',2,2,0,'-'),('4545-yajshdf',9,1,0,'-'),('1111-tambahan-2017',13,4,0,'-'),('1111-tambahan-2017',7,6,0,'-'),('1111-tambahan-2017',12,3,0,'-'),('123456-jsdhfkjsfhksfh-xdfdfdf',7,4,0,'-'),('123456-jsdhfkjsfhksfh-xdfdfdf',5,2,0,'-'),('123456-jsdhfkjsfhksfh-xdfdfdf',6,3,0,'-'),('8451-cfgfg',1,6,0,'-'),('8451-cfgfg',6,3,0,'-'),('666-pertamax',1,5,0,'-'),('666-pertamax',9,3,0,'-'),('666-pertamax',7,1,0,'-'),('666-pertamax',12,1,0,'-'),('SP/I/IX/2017',11,3,0,'-'),('SP/I/IX/2017',6,4,0,'-'),('SP/I/IX/2017',5,2,0,'-'),('SP/I/IX/2017',9,1,0,'-'),('SP/I/IX/2017',1,2,0,'-');
+INSERT INTO `permintaan_d` VALUES ('nomor-12345',11,3,0,'-'),('nomor-12345',6,2,0,'-'),('nomor-12345',10,4,0,'-'),('nomor-12345',5,1,0,'-'),('4545-yajshdf',1,3,0,'-'),('4545-yajshdf',2,2,0,'-'),('4545-yajshdf',9,1,0,'-'),('1111-tambahan-2017',13,4,0,'-'),('1111-tambahan-2017',7,6,0,'-'),('1111-tambahan-2017',12,3,0,'-'),('123456-jsdhfkjsfhksfh-xdfdfdf',7,4,0,'-'),('123456-jsdhfkjsfhksfh-xdfdfdf',5,2,0,'-'),('123456-jsdhfkjsfhksfh-xdfdfdf',6,3,0,'-'),('8451-cfgfg',1,6,0,'-'),('8451-cfgfg',6,3,0,'-'),('666-pertamax',1,5,0,'-'),('666-pertamax',9,3,0,'-'),('666-pertamax',7,1,0,'-'),('666-pertamax',12,1,0,'-'),('SP/I/IX/2017',11,3,0,'-'),('SP/I/IX/2017',6,4,0,'-'),('SP/I/IX/2017',5,2,0,'-'),('SP/I/IX/2017',9,1,0,'-'),('SP/I/IX/2017',1,2,0,'-'),('SP/II/IX/2017',1,2,0,'-'),('SP/II/IX/2017',14,2,0,'-'),('SP/II/IX/2017',5,1,0,'-'),('SP/II/IX/2017',10,1,0,'-'),('SP/II/IX/2017',6,1,0,'-');
 /*!40000 ALTER TABLE `permintaan_d` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -247,4 +247,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-09-20 18:59:57
+-- Dump completed on 2017-09-20 20:42:03

@@ -1,5 +1,7 @@
 /*style.css*/
 body{
+	margin-left: 5px;
+	margin-right: 5px;
 }
 .kontenxx{color: #777;}
 
@@ -56,6 +58,15 @@ body{
 	/*background-color: #fff;*/
 }
 
+.judul-halaman{
+	text-align: center;
+	font-weight: bold;
+	font-size: 150%;
+	color: #555;
+	background-color: #ddd;
+	margin-bottom: 3px;
+}
+
 .input-group{
 	margin-bottom: 0px;
 }
@@ -63,7 +74,7 @@ body{
 .input-group-addon{min-width: 200px;}
 .hasil-submit{font-weight: bold;color: #00f;padding: 10px;}
 
-.table thead tr th{color:#777;text-align:center;background: linear-gradient(#ddf,#aac);}
+.table thead tr th{text-align: center;}
 
 
 .row{

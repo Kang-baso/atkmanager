@@ -30,7 +30,8 @@ if ($conn->connect_error) die("Connection failed: " . $conn->connect_error);
 
 </head>
 <body>
-<!--a href="#" target="_blank" class="btn btn-sm btn-info" onClick ="$('#tableID').tableExport({type:'pdf',escape:'false'});"><span class="glyphicon glyphicon-download-alt"></span> Export to PDF</a-->
+<!--a href="#" target="_blank" class="btn btn-sm btn-info" onClick ="$('#tableID').tableExport({type:'pdf',pdfFontSize:'7',escape:'false'});"><span class="glyphicon glyphicon-download-alt"></span> Export to PDF</a-->
+
 <div id="konten">
 <?php
 /*if (isset($_GET['id']) 
@@ -47,50 +48,88 @@ if (isset($_POST['id']) && isset($_POST['ket']) && isset($_POST['tgl']) && isset
 	$div=$_POST['div'];
 
 ?>
-
+<div class="judul-halaman">
+	Daftar Permintaan Barang
+</div>
 	<div class="table-responsive">
-	  	<table class="table table-hover table-bordered" id="tableID">
+		<table class="tabel-kop ">
+			<tbody>
+				<tr>
+					<td width="150px">Nomor</td>
+					<td width="10px;">:</td>
+					<td><?php echo strtoupper($id);?></td>
+				</tr>
+				<tr>
+					<td width="150px">Keterangan</td>
+					<td width="10px;">:</td>
+					<td><?php echo $ket;?></td>
+				</tr>
+				<tr>
+					<td width="150px">Tanggal Posting</td>
+					<td width="10px;">:</td>
+					<td><?php echo $tgl;?></td>
+				</tr>
+				<tr>
+					<td width="150px">Divisi</td>
+					<td width="1px;">:</td>
+					<td><?php echo $div;?></td>
+				</tr>
+			</tbody>
+		</table>
+	  	<table class="table table-bordered" id="tableID">
 	  		<thead>
-
-	  			<tr>
-	  				<td colspan="5">
-
-    <div class="input-group">
-      <span class="input-group-addon">Nomor</span>
-      <input type="text" readonly name="id" class="form-control" value="<?php echo strtoupper($id);?>" />
-    </div>
-		<div class="input-group">
-		  <span class="input-group-addon">Keterangan</span>
-		  <input type="text" readonly name="ket" class="form-control" value="<?php echo $ket;?>" />
-		</div>
-    <div class="input-group">
-      <span class="input-group-addon">Tanggal Posting</span>
-      <input type="text" readonly name="" id="" class="form-control" value="<?php echo $tgl;?>" />
-    </div>  
-    <div class="input-group">
-      <span class="input-group-addon">Divisi</span>
-      <input type="text" readonly name="" id="" class="form-control" value="<?php echo $div;?>" />
-    </div> 
-
-	  				</td>
-	  			</tr>
-
 	  			<tr>
 	  				<th>#</th>
-	  				<th>Nomor</th>
-	  				<th>Keterangan</th>
-	  				<th>Tanggal</th>
-	  				<th>Divisi</th>
+	  				<th>Nama</th>
+	  				<th colspan="2">Jumlah</th>
 	  			</tr>
 	  		</thead>
 	  		<tbody>
 
 	  		<?php
-for ($i=0; $i < 100; $i++) { 
-	echo "<tr><td>$i</td><td>$id</td><td>$ket</td><td>$tgl</td><td>$div</td></tr>";
-}
+	  			$i=0;
+	  			$sql="SELECT DISTINCT b.id,b.nama,d.jml_minta,b.satuan FROM permintaan_d AS d LEFT OUTER JOIN barang AS b ON b.id=d.id_barang WHERE d.nomor_permintaan=?";
+	  			$stmt=$conn->prepare($sql);
+	  			$stmt->bind_param('s',$id);
+	  			if ($stmt->execute()) {
+	  				$result = $stmt->get_result();
+	  				while ($row = $result->fetch_row()){
+	  					$i++;
+	  					?>
+	  			<tr>
+	  				<td align="center"><?php echo $i;?></td>
+	  				<td><?php echo $row[1];?></td>
+	  				<td align="right"><?php echo $row[2];?></td>
+	  				<td><?php echo strtoupper($row[3]);?></td>
+	  			</tr>
+	  					<?php
+	  				}
+	  			}
+	  			$stmt->close();
+
 	  		?>
 	  		</tbody>
+	  	</table>
+	  	<table class="tabel-ttd table">
+	  		<tfoot>
+	  			<tr>
+	  				<td colspan="2" align="right">
+	  					Jayapura, <?php echo date("d M Y");?>
+	  					&nbsp;
+	  					&nbsp;
+	  					&nbsp;
+	  					&nbsp;
+	  				</td>
+	  			</tr>
+	  			<tr>
+	  				<td width="50%" align="center">
+	  					Petugas
+	  				</td>
+	  				<td width="50%" align="center">
+	  					Manajer
+	  				</td>
+	  			</tr>
+	  		</tfoot>
 	  	</table>
 	</div>
 <?php

@@ -59,6 +59,12 @@ body{
 	/*background-color: #fff;*/
 }
 
+.judul-halaman{
+	text-align: center;
+	font-weight: bold;
+	font-size: 150%;
+}
+
 .input-group{
 	margin-bottom: 5px;
 }

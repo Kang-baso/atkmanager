@@ -5,7 +5,7 @@
   <div class="panel-body">
 
   	<a href="?ref=tambah-barang" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-plus"></span> Tambah Barang</a>
-    <a href="#" target="_blank" class="btn btn-sm btn-info" onClick ="$('#tableID').tableExport({type:'pdf',escape:'false'});"><span class="glyphicon glyphicon-download-alt"></span> Export to PDF</a>
+    <a href="#" target="_blank" class="btn btn-sm btn-info" onClick ="$('#tableID').tableExport({type:'pdf',pdfFontSize:'7',escape:'false'});"><span class="glyphicon glyphicon-download-alt"></span> Export to PDF</a>
   	<div class="table-responsive">
   	<table class="table table-hover table-bordered" id="tableID">
   		<thead>
