@@ -14,7 +14,7 @@
 	  				<th>Keterangan</th>
 	  				<th>Tanggal</th>
 	  				<th>Divisi</th>
-	  				<th colspan="2">Aksi</th>
+	  				<th>Aksi</th>
 	  			</tr>
 	  		</thead>
 	  		<tbody>
@@ -36,8 +36,7 @@
 	  				<td><?php echo $row[1];?></td>
 	  				<td align="center"><?php echo $row[3];?></td>
 	  				<td align="center"><?php echo $row[4];?></td>
-	  				<td align="center"><a href="?ref=hapus-permintaan&id=<?php echo $row[0];?>" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></a></td>
-	  				<td align="center"><a href="?ref=ubah-permintaan&id=<?php echo $row[0];?>" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></a></td>
+	  				<td align="center" title="hapus"><a href="?ref=review-permintaan&id=<?php echo $row[0];?>" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-hand-right"></span> Review</a></td>
 	  			</tr>
 	  					<?php
 	  					$i++;

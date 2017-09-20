@@ -127,7 +127,7 @@ if (isset($_POST['submit-login'])) {
         <!--li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
         <li><a href="#">Link</a></li-->
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Berkas<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Berkas <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="?ref=barang">Barang</a></li>
             <li><a href="?ref=divisi">Bidang</a></li>
@@ -141,15 +141,16 @@ if (isset($_POST['submit-login'])) {
           </ul>
         </li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Proses<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Proses <span class="caret"></span></a>
           <ul class="dropdown-menu">            <li><a href="?ref=pilih-item">Buat Permintaan</a></li>
-            <li><a href="?ref=batalkan-permintaan">Batalkan Permintaan</a></li>
+            <li><a href="?ref=edit-permintaan">Edit Permintaan</a></li>
+            <li><a href="?ref=review-permintaan">Review Permintaan</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="?ref=list-permintaan">List Permintaan <span class="glyphicon glyphicon-envelope"></span></a></li>
+            <li><a href="?ref=list-permintaan">List Permintaan <span class="glyphicon glyphicon-list-alt"></span></a></li>
           </ul>
         </li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Laporan<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Laporan <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="?ref=hasil-review">Hasil Review</a></li>
             <li><a href="#">Rekap Permintaan</a></li>
@@ -166,7 +167,10 @@ if (isset($_POST['submit-login'])) {
       </form-->
       <ul class="nav navbar-nav navbar-right">
       	<li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo "Selamat Datang <strong>".ucwords($_SESSION['username'])."</strong> (".ucwords($_SESSION['role_name']).")";?></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo "Selamat Datang <strong>".ucwords($_SESSION['username'])."</strong> (".ucwords($_SESSION['role_name']).")";?> <span class="glyphicon glyphicon-user"></span><span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="?ref=notifikasi">Notifikasi <span class="glyphicon glyphicon-envelope"></span></a></li>
+          </ul>
         </li>
         <!--li><a href="#">Link</a></li-->
         <li class="dropdown">
@@ -186,65 +190,9 @@ if (isset($_POST['submit-login'])) {
 </nav>
 <div class="konten">
 	<?php
+require_once('pages/view/konten.php');
 
-if (isset($_GET['ref'])) {
-	$ref=$_GET['ref'];
-	switch ($ref) {
-		case 'log-out':
-			if(isset($_SESSION['username']))unset($_SESSION['username']);
-			if(isset($_SESSION['added_item']))unset($_SESSION['added_item']);
-			session_destroy();
-			exit(header('Location: '.base_url()));
-			break;
-		case 'divisi':
-			require_once('pages/view/master-divisi.php');
-			break;
-		case 'tambah-divisi':
-			require_once('pages/view/tambah-divisi.php');
-			break;
-		case 'ubah-divisi':
-			require_once('pages/view/ubah-divisi.php');
-			break;
-		case 'hapus-divisi':
-			require_once('pages/view/hapus-divisi.php');
-			break;
-		case 'karyawan':
-			require_once('pages/view/master-karyawan.php');
-			break;
-		case 'tambah-user':
-			require_once('pages/view/tambah-user.php');
-			break;
-		case 'barang':
-			require_once('pages/view/master-barang.php');
-			break;
-		case 'tambah-barang':
-			require_once('pages/view/tambah-barang.php');
-			break;
-		case 'ubah-barang':
-			require_once('pages/view/ubah-barang.php');
-			break;
-		case 'hapus-barang':
-			require_once('pages/view/hapus-barang.php');
-			break;
-		case 'pilih-item':
-			require_once('pages/view/master-item.php');
-			break;
-		case 'ajukan-permintaan':
-			require_once('pages/view/ajukan-permintaan.php');
-			break;
-		case 'list-permintaan':
-			require_once('pages/view/list-permintaan.php');
-			break;
-		case 'batalkan-permintaan':
-			require_once('pages/view/batalkan-permintaan.php');
-		default:
-			# code...
-			break;
-	}
-}
-
-	}
-	
+	}#logged in	
 	?>
 </div>
 <?php break_point();?>
