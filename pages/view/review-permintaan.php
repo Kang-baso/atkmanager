@@ -1,9 +1,9 @@
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">List Permintaan Divisi</h3>
+    <h3 class="panel-title">List Permintaan Divisi Anda</h3>
   </div>
   <div class="panel-body">
-  	<p>Modul ini berfungsi untuk <strong>Membatalkan</strong> permintaan Alat Tulis Kantor dari Divisi/ Bidang anda yang masih dalam status : proses <strong>Review</strong>, oleh bagian terkait.</p>
+  	<p>Modul ini berfungsi untuk <strong>me-<i>review</i></strong> permintaan Alat Tulis Kantor dari Divisi/ Bidang untuk selanjutnya di-teruskan ke proses <strong>pengadaan</strong>.</p>
   	<hr/>
 	<div class="table-responsive">
 	  	<table class="table table-hover table-bordered">
@@ -36,7 +36,7 @@
 	  				<td><?php echo $row[1];?></td>
 	  				<td align="center"><?php echo $row[3];?></td>
 	  				<td align="center"><?php echo $row[4];?></td>
-	  				<td align="center" title="hapus"><a href="?ref=review-permintaan&id=<?php echo $row[0];?>" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-hand-right"></span> Review</a></td>
+	  				<td align="center" title="Review"><a href="?ref=acc-permintaan&id=<?php echo $row[0];?>" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-hand-right"></span> Review</a></td>
 	  			</tr>
 	  					<?php
 	  					$i++;

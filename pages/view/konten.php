@@ -72,6 +72,9 @@ if (isset($_GET['ref'])) {
 		case 'cetak-permintaan':
 			require_once('pages/view/cetak-permintaan.php');
 			break;
+		case 'acc-permintaan':
+			require_once('pages/view/acc-permintaan.php');
+			break;
 		default:
 			# code...
 			break;

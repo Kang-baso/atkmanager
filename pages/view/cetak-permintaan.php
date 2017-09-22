@@ -76,7 +76,7 @@ if (isset($_POST['id']) && isset($_POST['ket']) && isset($_POST['tgl']) && isset
 				</tr>
 			</tbody>
 		</table>
-	  	<table class="table table-bordered" id="tableID">
+	  	<table class="tabel" id="tableID">
 	  		<thead>
 	  			<tr>
 	  				<th>#</th>
@@ -98,7 +98,7 @@ if (isset($_POST['id']) && isset($_POST['ket']) && isset($_POST['tgl']) && isset
 	  					?>
 	  			<tr>
 	  				<td align="center"><?php echo $i;?></td>
-	  				<td><?php echo $row[1];?></td>
+	  				<td><?php echo ucwords($row[1]);?></td>
 	  				<td align="right"><?php echo $row[2];?></td>
 	  				<td><?php echo strtoupper($row[3]);?></td>
 	  			</tr>
@@ -110,7 +110,7 @@ if (isset($_POST['id']) && isset($_POST['ket']) && isset($_POST['tgl']) && isset
 	  		?>
 	  		</tbody>
 	  	</table>
-	  	<table class="tabel-ttd table">
+	  	<table class="tabel-ttd tabel">
 	  		<tfoot>
 	  			<tr>
 	  				<td colspan="2" align="right">

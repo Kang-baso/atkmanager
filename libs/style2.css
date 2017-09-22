@@ -54,8 +54,17 @@ body{
 }
 #break-point a {color: #333;}
 
-.table{
-	/*background-color: #fff;*/
+.tabel{
+	width: 100%;
+	border: 1px solid #ccc;
+}
+.tabel tr td,.tabel tr th{
+	padding: 3px;
+	border: 1px solid #ccc;
+}
+
+.tabel tr th{
+	text-align: center;
 }
 
 .judul-halaman{
