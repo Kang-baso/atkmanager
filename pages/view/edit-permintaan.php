@@ -47,7 +47,7 @@
 	  						<button type="submit" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-print"></span></button>
 	  					</form-->
 
-	  					<a href="pages/reports/cetak-permintaan.php" target="_blank" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-print"></span></a>
+	  					<a href="pages/reports/cetak-permintaan.php?id=<?php echo $row[0];?>" target="_blank" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-print"></span></a>
 
 	  				</td>
 	  			</tr>
