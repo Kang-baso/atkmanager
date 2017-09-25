@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="cetak-permintaan" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e79c587f-09a1-447a-8cd7-a165a5760847">
 	<property name="ireport.zoom" value="2.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="152"/>
 	<property name="ireport.callouts" value="##Mon Sep 25 14:40:33 WIT 2017"/>
 	<parameter name="parameter1" class="java.lang.String"/>
 	<parameter name="parameter2" class="java.lang.String"/>
@@ -10,7 +10,7 @@
 	<parameter name="parameter4" class="java.lang.String"/>
 	<parameter name="parameter5" class="java.lang.String"/>
 	<queryString>
-		<![CDATA[SELECT DISTINCT b.id,b.nama,d.jml_minta,b.satuan FROM permintaan_d AS d LEFT OUTER JOIN barang AS b ON b.id=d.id_barang WHERE d.nomor_permintaan='$P{parameter1}' ORDER BY b.nama;]]>
+		<![CDATA[SELECT DISTINCT b.id,b.nama,d.jml_minta,UCASE(b.satuan) as satuan FROM permintaan_d AS d LEFT OUTER JOIN barang AS b ON b.id=d.id_barang WHERE d.nomor_permintaan='$P{parameter1}' ORDER BY b.nama;]]>
 	</queryString>
 	<field name="id" class="java.lang.Integer">
 		<fieldDescription><![CDATA[]]></fieldDescription>
@@ -76,7 +76,7 @@
 				<textFieldExpression><![CDATA[$P{parameter4}]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement x="0" y="83" width="483" height="1" uuid="a0d30126-6d10-4a45-8782-c77352709995"/>
+				<reportElement x="0" y="83" width="555" height="4" uuid="a0d30126-6d10-4a45-8782-c77352709995"/>
 			</line>
 			<staticText>
 				<reportElement x="90" y="0" width="11" height="20" uuid="de4cc5d3-658c-4a8a-aafb-0b3216ed255f"/>
@@ -110,64 +110,61 @@
 				<text><![CDATA[Nama]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="2" width="66" height="20" uuid="9160eba2-48ce-41a3-b7ba-dc78a60ee79b"/>
+				<reportElement x="0" y="2" width="76" height="20" uuid="9160eba2-48ce-41a3-b7ba-dc78a60ee79b"/>
 				<textElement textAlignment="Center">
 					<font isBold="true"/>
 				</textElement>
-				<text><![CDATA[ID]]></text>
+				<text><![CDATA[No.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="283" y="2" width="100" height="20" uuid="1544091c-2f40-4865-b958-9a718390386b"/>
+				<reportElement x="355" y="2" width="80" height="20" uuid="1544091c-2f40-4865-b958-9a718390386b"/>
 				<textElement textAlignment="Center">
 					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[Jumlah]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="395" y="2" width="88" height="20" uuid="8eceba09-d1f6-4d63-bfc0-f609b05ce95f"/>
+				<reportElement x="435" y="2" width="120" height="20" uuid="8eceba09-d1f6-4d63-bfc0-f609b05ce95f"/>
 				<textElement textAlignment="Center">
 					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[Satuan]]></text>
 			</staticText>
-			<line>
-				<reportElement x="0" y="20" width="483" height="2" uuid="869a9c7b-9097-4628-938c-46928aa4fc6b"/>
-			</line>
 		</band>
 	</columnHeader>
 	<detail>
 		<band height="21" splitType="Stretch">
 			<rectangle>
+				<reportElement x="355" y="0" width="80" height="20" uuid="935bd9cd-9072-451b-8a3f-132e7d265ee2"/>
+			</rectangle>
+			<rectangle>
 				<reportElement x="1" y="0" width="75" height="20" uuid="4e7b607b-e69f-4639-9599-23b25cd12af6"/>
 			</rectangle>
 			<rectangle>
-				<reportElement x="76" y="0" width="207" height="20" uuid="c30332c7-cfea-47b8-9939-228b3ab7de7a"/>
+				<reportElement x="76" y="0" width="279" height="20" uuid="c30332c7-cfea-47b8-9939-228b3ab7de7a"/>
 			</rectangle>
 			<rectangle>
-				<reportElement x="283" y="0" width="112" height="20" uuid="935bd9cd-9072-451b-8a3f-132e7d265ee2"/>
-			</rectangle>
-			<rectangle>
-				<reportElement x="395" y="0" width="88" height="20" uuid="6c273a81-216c-488e-9363-34ee4e83f228"/>
+				<reportElement x="435" y="0" width="120" height="20" uuid="6c273a81-216c-488e-9363-34ee4e83f228"/>
 			</rectangle>
 			<textField>
-				<reportElement x="76" y="0" width="194" height="20" backcolor="#C0C0C0" uuid="a2b10139-cb5b-4a79-a1fc-40f8557f93a4"/>
+				<reportElement x="88" y="0" width="246" height="20" backcolor="#C0C0C0" uuid="a2b10139-cb5b-4a79-a1fc-40f8557f93a4"/>
 				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="283" y="0" width="100" height="20" backcolor="#C0C0C0" uuid="0a786131-2d13-4a89-ad43-227b6e964172"/>
+				<reportElement x="355" y="0" width="80" height="20" backcolor="#C0C0C0" uuid="0a786131-2d13-4a89-ad43-227b6e964172"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{jml_minta}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="0" y="0" width="66" height="20" backcolor="#C0C0C0" uuid="fe4c7263-181e-4ba5-ab3c-e5536028b541"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="395" y="0" width="88" height="20" backcolor="#C0C0C0" uuid="bda82f6f-d3dd-4331-a7bd-09b56eacc70b"/>
+				<reportElement x="435" y="1" width="120" height="20" uuid="2613fcae-4656-4bf5-bcba-dd045d37a2a1"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{satuan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="1" width="75" height="20" uuid="67b1efbb-d0a7-44dd-8f4e-0fee5e319e14"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
@@ -181,6 +178,7 @@
 		<band height="42" splitType="Stretch">
 			<staticText>
 				<reportElement x="383" y="0" width="62" height="20" uuid="a552a9f9-1006-403a-a7c9-94a4f797ea87"/>
+				<textElement textAlignment="Right"/>
 				<text><![CDATA[Jayapura,]]></text>
 			</staticText>
 			<textField>

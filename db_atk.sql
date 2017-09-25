@@ -151,7 +151,7 @@ CREATE TABLE `permintaan_d` (
 
 LOCK TABLES `permintaan_d` WRITE;
 /*!40000 ALTER TABLE `permintaan_d` DISABLE KEYS */;
-INSERT INTO `permintaan_d` VALUES ('nomor-12345',11,3,0,'-'),('nomor-12345',6,2,0,'-'),('nomor-12345',10,4,0,'-'),('nomor-12345',5,1,0,'-'),('4545-yajshdf',1,3,0,'-'),('4545-yajshdf',2,2,0,'-'),('4545-yajshdf',9,1,0,'-'),('1111-tambahan-2017',13,4,0,'-'),('1111-tambahan-2017',7,6,0,'-'),('1111-tambahan-2017',12,3,0,'-'),('123456-jsdhfkjsfhksfh-xdfdfdf',7,4,0,'-'),('123456-jsdhfkjsfhksfh-xdfdfdf',5,2,0,'-'),('123456-jsdhfkjsfhksfh-xdfdfdf',6,3,0,'-'),('8451-cfgfg',1,6,0,'-'),('8451-cfgfg',6,3,0,'-'),('666-pertamax',1,5,0,'-'),('666-pertamax',9,3,0,'-'),('666-pertamax',7,1,0,'-'),('666-pertamax',12,1,0,'-'),('SP/I/IX/2017',11,3,0,'-'),('SP/I/IX/2017',6,4,0,'-'),('SP/I/IX/2017',5,2,0,'-'),('SP/I/IX/2017',9,1,0,'-'),('SP/I/IX/2017',1,2,0,'-'),('SP/II/IX/2017',1,2,0,'-'),('SP/II/IX/2017',14,2,0,'-'),('SP/II/IX/2017',5,1,0,'-'),('SP/II/IX/2017',10,1,0,'-'),('SP/II/IX/2017',6,1,0,'-');
+INSERT INTO `permintaan_d` VALUES ('nomor-12345',11,3,0,'-'),('nomor-12345',6,2,0,'-'),('nomor-12345',10,4,0,'-'),('nomor-12345',5,1,0,'-'),('4545-yajshdf',1,3,0,'-'),('4545-yajshdf',2,2,0,'-'),('4545-yajshdf',9,1,0,'-'),('1111-tambahan-2017',13,4,0,'-'),('1111-tambahan-2017',7,6,0,'-'),('1111-tambahan-2017',12,3,0,'-'),('123456-jsdhfkjsfhksfh-xdfdfdf',7,4,0,'-'),('123456-jsdhfkjsfhksfh-xdfdfdf',5,2,0,'-'),('123456-jsdhfkjsfhksfh-xdfdfdf',6,3,0,'-'),('8451-cfgfg',1,6,0,'-'),('8451-cfgfg',6,3,0,'-'),('666-pertamax',1,5,0,'-'),('666-pertamax',9,3,0,'-'),('666-pertamax',7,1,0,'-'),('666-pertamax',12,1,0,'-'),('SP/I/IX/2017',1,4,0,'-'),('SP/I/IX/2017',2,2,0,'-'),('SP/I/IX/2017',9,2,0,'-'),('SP/I/IX/2017',8,1,0,'-'),('SP/II/IX/2017',1,2,0,'-'),('SP/II/IX/2017',14,2,0,'-'),('SP/II/IX/2017',5,1,0,'-'),('SP/II/IX/2017',10,1,0,'-'),('SP/II/IX/2017',6,1,0,'-'),('SP/I/IX/2017',14,2,0,'-'),('SP/I/IX/2017',12,4,0,'-'),('SP/I/IX/2017',7,1,0,'-'),('SP/I/IX/2017',13,5,0,'-'),('SP/I/IX/2017',6,2,0,'-'),('SP/I/IX/2017',11,1,0,'-'),('SP/I/IX/2017',10,1,0,'-'),('SP/I/IX/2017',5,1,0,'-');
 /*!40000 ALTER TABLE `permintaan_d` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -225,7 +225,7 @@ CREATE TABLE `user_logged` (
   `nama` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tgl` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -234,7 +234,7 @@ CREATE TABLE `user_logged` (
 
 LOCK TABLES `user_logged` WRITE;
 /*!40000 ALTER TABLE `user_logged` DISABLE KEYS */;
-INSERT INTO `user_logged` VALUES (1,'123456','root','2017-09-14 23:57:52'),(2,'123456','root','2017-09-15 17:51:22'),(3,'123456','root','2017-09-18 06:23:02'),(4,'123456','root','2017-09-20 03:23:58');
+INSERT INTO `user_logged` VALUES (1,'123456','root','2017-09-14 23:57:52'),(2,'123456','root','2017-09-15 17:51:22'),(3,'123456','root','2017-09-18 06:23:02'),(4,'123456','root','2017-09-20 03:23:58'),(5,'123456','root','2017-09-21 09:44:35'),(6,'123456','root','2017-09-22 03:10:55'),(7,'123456','root','2017-09-22 15:12:24'),(8,'123456','root','2017-09-23 15:39:20'),(9,'123456','root','2017-09-25 20:37:51');
 /*!40000 ALTER TABLE `user_logged` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -247,4 +247,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-09-20 20:42:03
+-- Dump completed on 2017-09-26  6:16:53
