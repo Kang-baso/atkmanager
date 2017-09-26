@@ -3,6 +3,11 @@
 if (isset($_GET['id'])) {
 	$id_ubah=$_GET['id'];
 }
+
+$back="";
+if (isset($_GET['back'])) {
+	$back=$_GET['back'];
+}
 ?>
 
 <div class="panel panel-default">
@@ -53,5 +58,5 @@ if (isset($_GET['id'])) {
 </div>
 
 <center>
-	<a href="?ref=edit-permintaan" class="btn btn-warning btn-lg">Kembali</a>
+	<a href="?ref=<?php echo $back;?>" class="btn btn-warning btn-lg">Kembali</a>
 </center>

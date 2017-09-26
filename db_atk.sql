@@ -125,7 +125,7 @@ CREATE TABLE `permintaan` (
 
 LOCK TABLES `permintaan` WRITE;
 /*!40000 ALTER TABLE `permintaan` DISABLE KEYS */;
-INSERT INTO `permintaan` VALUES ('nomor-12345','tes tes saja bos',0,'2017-09-13 13:32:51','0123456789'),('4545-yajshdf','rutin',0,'2017-09-13 13:37:49','0123456789'),('1111-tambahan-2017','tambahan bos',0,'2017-09-13 13:48:25','0123456789'),('123456-jsdhfkjsfhksfh-xdfdfdf','Permintaan Beruntun',0,'2017-09-14 06:26:11','0123456789'),('8451-cfgfg','Tadi tonk lupa',0,'2017-09-14 06:42:46','0123456789'),('666-pertamax','Permintaan rutin',0,'2017-09-16 22:35:49','0123456789'),('SP/I/IX/2017','Rutin Bulanan',0,'2017-09-20 06:46:17','123456'),('SP/II/IX/2017','Berikut',0,'2017-09-20 10:12:23','123456');
+INSERT INTO `permintaan` VALUES ('SP/I/IX/2017','Rutin Bulanan',1,'2017-09-20 06:46:17','123456'),('SP/II/IX/2017','Berikut',0,'2017-09-20 10:12:23','123456');
 /*!40000 ALTER TABLE `permintaan` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -152,7 +152,7 @@ CREATE TABLE `permintaan_d` (
 
 LOCK TABLES `permintaan_d` WRITE;
 /*!40000 ALTER TABLE `permintaan_d` DISABLE KEYS */;
-INSERT INTO `permintaan_d` VALUES ('nomor-12345',11,3,0,'-'),('nomor-12345',6,2,0,'-'),('nomor-12345',10,4,0,'-'),('nomor-12345',5,1,0,'-'),('4545-yajshdf',1,3,0,'-'),('4545-yajshdf',2,2,0,'-'),('4545-yajshdf',9,1,0,'-'),('1111-tambahan-2017',13,4,0,'-'),('1111-tambahan-2017',7,6,0,'-'),('1111-tambahan-2017',12,3,0,'-'),('123456-jsdhfkjsfhksfh-xdfdfdf',7,4,0,'-'),('123456-jsdhfkjsfhksfh-xdfdfdf',5,2,0,'-'),('123456-jsdhfkjsfhksfh-xdfdfdf',6,3,0,'-'),('8451-cfgfg',1,6,0,'-'),('8451-cfgfg',6,3,0,'-'),('666-pertamax',1,5,0,'-'),('666-pertamax',9,3,0,'-'),('666-pertamax',7,1,0,'-'),('666-pertamax',12,1,0,'-'),('SP/I/IX/2017',1,4,0,'-'),('SP/I/IX/2017',2,2,0,'-'),('SP/I/IX/2017',9,2,0,'-'),('SP/I/IX/2017',8,1,0,'-'),('SP/II/IX/2017',1,2,0,'-'),('SP/II/IX/2017',14,2,0,'-'),('SP/II/IX/2017',5,1,0,'-'),('SP/II/IX/2017',10,1,0,'-'),('SP/II/IX/2017',6,1,0,'-'),('SP/I/IX/2017',14,2,0,'-'),('SP/I/IX/2017',12,4,0,'-'),('SP/I/IX/2017',7,1,0,'-'),('SP/I/IX/2017',13,5,0,'-'),('SP/I/IX/2017',6,2,0,'-'),('SP/I/IX/2017',11,1,0,'-'),('SP/I/IX/2017',10,1,0,'-'),('SP/I/IX/2017',5,1,0,'-');
+INSERT INTO `permintaan_d` VALUES ('SP/I/IX/2017',1,4,0,'-'),('SP/I/IX/2017',2,2,0,'-'),('SP/I/IX/2017',9,2,0,'-'),('SP/I/IX/2017',8,1,0,'-'),('SP/II/IX/2017',1,2,0,'-'),('SP/II/IX/2017',14,2,0,'-'),('SP/II/IX/2017',5,1,0,'-'),('SP/II/IX/2017',10,1,0,'-'),('SP/II/IX/2017',6,1,0,'-'),('SP/I/IX/2017',14,2,0,'-'),('SP/I/IX/2017',12,4,0,'-'),('SP/I/IX/2017',7,1,0,'-'),('SP/I/IX/2017',13,5,0,'-'),('SP/I/IX/2017',6,2,0,'-'),('SP/I/IX/2017',11,1,0,'-'),('SP/I/IX/2017',10,1,0,'-'),('SP/I/IX/2017',5,1,0,'-');
 /*!40000 ALTER TABLE `permintaan_d` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -226,7 +226,7 @@ CREATE TABLE `user_logged` (
   `nama` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tgl` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -235,7 +235,7 @@ CREATE TABLE `user_logged` (
 
 LOCK TABLES `user_logged` WRITE;
 /*!40000 ALTER TABLE `user_logged` DISABLE KEYS */;
-INSERT INTO `user_logged` VALUES (1,'123456','root','2017-09-14 23:57:52'),(2,'123456','root','2017-09-15 17:51:22'),(3,'123456','root','2017-09-18 06:23:02'),(4,'123456','root','2017-09-20 03:23:58'),(5,'123456','root','2017-09-21 09:44:35'),(6,'123456','root','2017-09-22 03:10:55'),(7,'123456','root','2017-09-22 15:12:24'),(8,'123456','root','2017-09-23 15:39:20'),(9,'123456','root','2017-09-25 20:37:51'),(10,'123456','root','2017-09-25 23:49:16'),(11,'123456','root','2017-09-26 01:58:30');
+INSERT INTO `user_logged` VALUES (1,'123456','root','2017-09-14 23:57:52'),(2,'123456','root','2017-09-15 17:51:22'),(3,'123456','root','2017-09-18 06:23:02'),(4,'123456','root','2017-09-20 03:23:58'),(5,'123456','root','2017-09-21 09:44:35'),(6,'123456','root','2017-09-22 03:10:55'),(7,'123456','root','2017-09-22 15:12:24'),(8,'123456','root','2017-09-23 15:39:20'),(9,'123456','root','2017-09-25 20:37:51'),(10,'123456','root','2017-09-25 23:49:16'),(11,'123456','root','2017-09-26 01:58:30'),(12,'123456','Root Linuxer','2017-09-26 04:14:34'),(13,'123456','Root Linuxer','2017-09-26 05:13:14');
 /*!40000 ALTER TABLE `user_logged` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -248,4 +248,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-09-26 12:38:33
+-- Dump completed on 2017-09-26 15:28:22

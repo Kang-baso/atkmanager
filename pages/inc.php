@@ -29,14 +29,14 @@ function get_status($key){
 		case 0:
 			$result="Review";
 			break;
-		case 1:
+		/*case 2:
 			$result="Ditolak Semua Item";
 			break;
-		case 2:
+		case 3:
 			$result="Ditolak Sebagian Item";
-			break;
+			break;*/
 		default:
-			$result="Kabulkan Semua Item";
+			$result="Disetujui";
 			break;
 	}
 	return $result;

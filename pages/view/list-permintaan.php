@@ -21,7 +21,7 @@
 	  		<?php
 	  			$i=1;
 	  			#$sql="SELECT DISTINCT p.nomor,p.alasan,p.status,p.tgl,d.nama FROM permintaan AS p LEFT OUTER JOIN user AS u ON u.nik=p.nik LEFT OUTER JOIN divisi AS d ON d.id=u.id_divisi ORDER BY p.tgl ASC;";
-	  			$sql="SELECT DISTINCT p.nomor,p.alasan,p.status,DATE_FORMAT(p.tgl, '%d %M %Y'),d.nama FROM permintaan AS p LEFT OUTER JOIN user AS u ON u.nik=p.nik LEFT OUTER JOIN divisi AS d ON d.id=u.id_divisi WHERE p.status=0 ORDER BY p.tgl ASC;";
+	  			$sql="SELECT DISTINCT p.nomor,p.alasan,p.status,DATE_FORMAT(p.tgl, '%d %M %Y'),d.nama FROM permintaan AS p LEFT OUTER JOIN user AS u ON u.nik=p.nik LEFT OUTER JOIN divisi AS d ON d.id=u.id_divisi WHERE p.status=1 ORDER BY p.tgl ASC;";
 	  			$stmt=$conn->prepare($sql);
 	  			if ($stmt->execute()) {
 	  				$result = $stmt->get_result();
@@ -29,7 +29,7 @@
 	  					?>
 	  			<tr>
 	  				<td align="center"><?php echo $i;?></td>
-	  				<td><?php echo $row[0];?></td>
+	  				<td><a href="?ref=detail-permintaan&id=<?php echo $row[0];?>&back=list-permintaan" title="Lihat detail..."><strong><?php echo $row[0];?></strong></a></td>
 	  				<td><?php echo $row[1];?></td>
 	  				<td align="center"><?php echo $row[3];?></td>
 	  				<td align="center"><?php echo $row[4];?></td>

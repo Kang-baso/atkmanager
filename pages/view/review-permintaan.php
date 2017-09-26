@@ -32,7 +32,7 @@
 	  					?>
 	  			<tr>
 	  				<td align="center"><?php echo $i;?></td>
-	  				<td><?php echo $row[0];?></td>
+	  				<td><a href="?ref=detail-permintaan&id=<?php echo $row[0];?>&back=review-permintaan" title="Lihat detail..."><strong><?php echo $row[0];?></strong></a></td>
 	  				<td><?php echo $row[1];?></td>
 	  				<td align="center"><?php echo $row[3];?></td>
 	  				<td align="center"><?php echo $row[4];?></td>
