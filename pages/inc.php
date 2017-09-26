@@ -43,7 +43,7 @@ function get_status($key){
 }
 
 function break_point(){
-	echo "<div id=\"break-point\">&copy; 2017. All right reserved. Powered by <a href=\"http://arecastudio.github.io/\" target=\"_blank\">Developer</a>.</div>";
+	echo "<div id=\"break-point\">PT. PLN (Persero) Wilayah Papua &copy; 2017. All right reserved. Powered by <a href=\"http://arecastudio.github.io/\" target=\"_blank\">Developer</a>.</div>";
 }
 
 function getHari($numHr){

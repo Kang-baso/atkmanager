@@ -23,7 +23,7 @@
 	  			$id_divisi=$_SESSION['id_divisi'];
 	  			#echo "".$id_divisi;
 	  			#$sql="SELECT DISTINCT p.nomor,p.alasan,p.status,p.tgl,d.nama FROM permintaan AS p LEFT OUTER JOIN user AS u ON u.nik=p.nik LEFT OUTER JOIN divisi AS d ON d.id=u.id_divisi ORDER BY p.tgl ASC;";
-	  			$sql="SELECT DISTINCT p.nomor,p.alasan,p.status,DATE_FORMAT(p.tgl, '%d %M %Y'),d.nama FROM permintaan AS p LEFT OUTER JOIN user AS u ON u.nik=p.nik LEFT OUTER JOIN divisi AS d ON d.id=u.id_divisi WHERE p.status=0 AND d.id=? ORDER BY p.tgl ASC;";
+	  			$sql="SELECT DISTINCT p.nomor,p.alasan,p.status,DATE_FORMAT(p.tgl, '%d %M %Y'),d.nama,p.nik,u.nama,m.nik,m.nama FROM permintaan AS p LEFT OUTER JOIN user AS u ON u.nik=p.nik LEFT OUTER JOIN divisi AS d ON d.id=u.id_divisi LEFT OUTER JOIN user AS m ON m.nik=d.nik_manager WHERE p.status=0 AND d.id=? ORDER BY p.tgl ASC;";
 	  			$stmt=$conn->prepare($sql);
 	  			$stmt->bind_param('i',$id_divisi);
 	  			if ($stmt->execute()) {
@@ -44,6 +44,10 @@
 	  						<input type="hidden" name="ket" value="<?php echo $row[1];?>" />
 	  						<input type="hidden" name="tgl" value="<?php echo $row[3];?>" />
 	  						<input type="hidden" name="div" value="<?php echo $row[4];?>" />
+	  						<input type="hidden" name="nik1" value="<?php echo $row[5];?>" />
+	  						<input type="hidden" name="nama1" value="<?php echo $row[6];?>" />
+	  						<input type="hidden" name="nik2" value="<?php echo $row[7];?>" />
+	  						<input type="hidden" name="nama2" value="<?php echo $row[8];?>" />
 	  						<button type="submit" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-print"></span></button>
 	  					</form>
 
