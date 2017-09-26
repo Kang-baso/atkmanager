@@ -36,7 +36,7 @@ if (isset($_GET['id'])
 		<center>
 		<div class="btn-group" role="group" aria-label="...">
 		  <a href="?ref=review-permintaan" class="btn btn-warning btn-lg">Kembali</a>
-		  <button type="button" id="submit" class="btn btn-primary btn-lg">Setuju</button>
+		  <button type="button" id="submit" class="btn btn-primary btn-lg">Setuju <span class="glyphicon glyphicon-thumbs-up"></span></button>
 		</div>
 		</center>
   	</form>

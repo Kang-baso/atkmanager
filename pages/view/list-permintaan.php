@@ -33,7 +33,7 @@
 	  				<td><?php echo $row[1];?></td>
 	  				<td align="center"><?php echo $row[3];?></td>
 	  				<td align="center"><?php echo $row[4];?></td>
-	  				<td align="center"><a href="#" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-hand-right"></span>&nbsp;<?php echo get_status($row[2]);?></a></td>
+	  				<td align="center"><b class="label label-success"><span class="glyphicon glyphicon-hand-right"></span>&nbsp;<?php echo get_status($row[2]);?></b></td>
 	  			</tr>
 	  					<?php
 	  					$i++;
