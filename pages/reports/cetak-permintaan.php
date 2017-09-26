@@ -7,12 +7,14 @@ include_once('../../libs/phpjasperxml/class/tcpdf/tcpdf.php');
 include_once("../../libs/phpjasperxml/class/PHPJasperXML.inc.php");
 include_once ('../inc.php');
 
+#$tgl_cetak=date('d - M - Y');
+$tgl_cetak=getTanggal();
+
 if (isset($_POST['nomor']) && isset($_POST['ket']) && isset($_POST['tgl']) && isset($_POST['div'])  ) {
 	$nomor=$_POST['nomor'];
 	$ket=$_POST['ket'];
 	$tgl=$_POST['tgl'];
 	$div=$_POST['div'];
-	$tgl_cetak=date('d - M - Y');
 
 
 	$PHPJasperXML = new PHPJasperXML();
