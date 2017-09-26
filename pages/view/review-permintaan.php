@@ -36,7 +36,7 @@
 	  				<td><?php echo $row[1];?></td>
 	  				<td align="center"><?php echo $row[3];?></td>
 	  				<td align="center"><?php echo $row[4];?></td>
-	  				<td align="center" title="Review"><a href="?ref=acc-permintaan&id=<?php echo $row[0];?>" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-hand-right"></span> Review</a></td>
+	  				<td align="center" title="Review"><a href="<?php echo "?ref=acc-permintaan&id=$row[0]&ket=$row[1]&tgl=$row[3]&div=$row[4]";?>" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-hand-right"></span></a></td>
 	  			</tr>
 	  					<?php
 	  					$i++;
