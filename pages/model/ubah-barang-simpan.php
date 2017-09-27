@@ -24,4 +24,5 @@ if ( isset($_POST['nama']) && isset($_POST['satuan']) && isset($_POST['stok']) &
 	}else echo "Data belum lengkap !";
 }
 $conn->close();
+
 ?>

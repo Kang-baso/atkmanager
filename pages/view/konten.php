@@ -36,6 +36,9 @@ if (isset($_GET['ref'])) {
 		case 'ubah-barang':
 			require_once('pages/view/ubah-barang.php');
 			break;
+		case 'ubah-barang-foto':
+			require_once('pages/view/ubah-barang-foto.php');
+			break;
 		case 'hapus-barang':
 			require_once('pages/view/hapus-barang.php');
 			break;

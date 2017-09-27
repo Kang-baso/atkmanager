@@ -18,7 +18,7 @@ if (isset($_GET['id'])
     <h3 class="panel-title">Ubah Barang</h3>
   </div>
   <div class="panel-body">
-  	<form method="post" action="" id="form-ubah-barang">
+  	<form method="post" action="" id="form-ubah-barang" enctype="multipart/form-data">
   		<input type="hidden" name="id" value="<?php echo $id;?>" />
   		<div class="input-group">
 		  <span class="input-group-addon">Nama Barang</span>
@@ -43,7 +43,7 @@ if (isset($_GET['id'])
 		<center>
 		<div class="btn-group" role="group" aria-label="...">
 		  <a href="?ref=barang" class="btn btn-warning btn-lg">Kembali</a>
-		  <button type="button" id="submit" class="btn btn-primary btn-lg">Ubah</button>
+		  <button type="button" id="submit" name="submit" class="btn btn-primary btn-lg">Ubah</button>
 		</div>
 		</center>
   	</form>
