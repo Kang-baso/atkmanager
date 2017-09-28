@@ -1,8 +1,8 @@
 <?php
-/*
+
 ###Simpan FOTO###
-if (isset($_FILES['fileToUpload'])) {
-	$target_dir = "/home/rail/Pictures/pengaduan/";
+if (isset($_FILES['fileToUpload']) && isset($_POST['submit'])) {
+	$target_dir = "assets/img/item/";
 	$name=$_FILES['fileToUpload']['name'];
 	$tmp_name=$_FILES['fileToUpload']['tmp_name'];
 	$size=$_FILES['fileToUpload']['size'];
@@ -49,7 +49,9 @@ if (isset($_FILES['fileToUpload'])) {
 	        echo "Sorry, there was an error uploading your file.";
 	    }
 	}
-}*/
+
+	header('location: '.base_url().'?ref=barang');
+}
 ###Simpan FOTO###
 
 if (isset($_GET['id']) && isset($_GET['nama']) && isset($_GET['img'])) {
@@ -71,7 +73,7 @@ if (isset($_GET['id']) && isset($_GET['nama']) && isset($_GET['img'])) {
   		<form id="form-foto" method="post" action=""  enctype="multipart/form-data">
   			<input type="file" name="fileToUpload" id="fileToUpload" onchange="readURL(this);"/>
   			<br/>
-  			<img id="gambar" src="assets/img/item/<?php echo $img;?>" width="200px" height="200px" style="border:1px dashed #ccc;border-radius: 5px;margin:2px; padding: 2px;" />
+  			<img id="gambar" src="assets/img/item/<?php echo $img;?>" width="300px" height="300px" style="border:1px dashed #ccc;border-radius: 5px;margin:2px; padding: 2px;" />
   			<br/>
   			<br/>
   			<div class="btn-group" role="group" aria-label="...">
