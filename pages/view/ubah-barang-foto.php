@@ -2,10 +2,13 @@
 
 ###Simpan FOTO###
 if (isset($_FILES['fileToUpload']) && isset($_POST['submit'])) {
+#if (isset($_POST['submit'])) {
 	$target_dir = "assets/img/item/";
 	$name=$_FILES['fileToUpload']['name'];
 	$tmp_name=$_FILES['fileToUpload']['tmp_name'];
 	$size=$_FILES['fileToUpload']['size'];
+
+	$hidden_id=$_POST['hidden_id'];
 
 	$target_file = $target_dir . basename($name);
 	$uploadOk = 1;
@@ -45,6 +48,13 @@ if (isset($_FILES['fileToUpload']) && isset($_POST['submit'])) {
 	} else {
 	    if (move_uploaded_file($tmp_name, $target_file)) {
 	        echo "The file ". basename($name). " has been uploaded.";
+
+	        $sql="UPDATE barang SET img=? WHERE id=?;";
+			$stmt=$conn->prepare($sql);
+			$stmt->bind_param('si',$name,$hidden_id);
+			$stmt->execute();
+			$stmt->close();
+
 	    } else {
 	        echo "Sorry, there was an error uploading your file.";
 	    }
@@ -53,7 +63,7 @@ if (isset($_FILES['fileToUpload']) && isset($_POST['submit'])) {
 	header('location: '.base_url().'?ref=barang');
 }
 ###Simpan FOTO###
-
+$id="";$nama="";$imd="";
 if (isset($_GET['id']) && isset($_GET['nama']) && isset($_GET['img'])) {
 	$id=$_GET['id'];
 	$nama=$_GET['nama'];
@@ -72,13 +82,14 @@ if (isset($_GET['id']) && isset($_GET['nama']) && isset($_GET['img'])) {
   			<h3><?php echo $nama;?></h3>
   		<form id="form-foto" method="post" action=""  enctype="multipart/form-data">
   			<input type="file" name="fileToUpload" id="fileToUpload" onchange="readURL(this);"/>
+  			<input type="hidden" name="hidden_id" value="<?php echo $id;?>" />
   			<br/>
-  			<img id="gambar" src="assets/img/item/<?php echo $img;?>" width="300px" height="300px" style="border:1px dashed #ccc;border-radius: 5px;margin:2px; padding: 2px;" />
+  			<img id="gambar" src="assets/img/item/<?php echo $img;?>" width="250px" height="250px" style="border:1px dashed #ccc;border-radius: 5px;margin:2px; padding: 2px;" />
   			<br/>
   			<br/>
   			<div class="btn-group" role="group" aria-label="...">
-			  <a href="?ref=barang" class="btn btn-warning btn-lg">Kembali</a>
-			  <button type="button" name="submit" id="submit" class="btn btn-primary btn-lg">Simpan <span class="glyphicon glyphicon-floppy-disk"></span></button>
+			  <a href="?ref=barang" class="btn btn-warning btn-lg"><span class="glyphicon glyphicon-chevron-left"></span> Kembali</a>
+			  <button type="submit" name="submit" id="submit" class="btn btn-primary btn-lg">Simpan <span class="glyphicon glyphicon-floppy-disk"></span></button>
 			</div>
   		</form>
   		</center>
