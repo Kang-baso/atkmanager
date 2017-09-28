@@ -51,12 +51,50 @@ if (isset($_FILES['fileToUpload'])) {
 	}
 }*/
 ###Simpan FOTO###
+
+if (isset($_GET['id']) && isset($_GET['nama']) && isset($_GET['img'])) {
+	$id=$_GET['id'];
+	$nama=$_GET['nama'];
+	$img=$_GET['img'];
+}
+
 ?>
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">Tambahkan Foto</h3>
+    <h3 class="panel-title">Tambahkan / Ubah Foto</h3>
   </div>
   <div class="panel-body">
+  	<div>
+  		<center>
+  			<h3><?php echo $nama;?></h3>
+  		<form id="form-foto" method="post" action=""  enctype="multipart/form-data">
+  			<input type="file" name="fileToUpload" id="fileToUpload" onchange="readURL(this);"/>
+  			<br/>
+  			<img id="gambar" src="assets/img/item/<?php echo $img;?>" width="200px" height="200px" style="border:1px dashed #ccc;border-radius: 5px;margin:2px; padding: 2px;" />
+  			<br/>
+  			<br/>
+  			<div class="btn-group" role="group" aria-label="...">
+			  <a href="?ref=barang" class="btn btn-warning btn-lg">Kembali</a>
+			  <button type="button" name="submit" id="submit" class="btn btn-primary btn-lg">Simpan <span class="glyphicon glyphicon-floppy-disk"></span></button>
+			</div>
+  		</form>
+  		</center>
+  	</div>
   </div>
 </div>
+
+<script type="text/javascript">
+	function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#gambar')
+                    .attr('src', e.target.result);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
