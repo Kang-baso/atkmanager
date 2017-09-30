@@ -3,10 +3,32 @@
     <h3 class="panel-title">Daftar Permintaan Barang Kolektif</h3>
   </div>
   <div class="panel-body">
-  	<p>Modul ini berfungsi untuk menampilkan daftar / list permintaan Alat Tulis Kantor yang baru saja di-posting dan masih dalam status : proses <strong>Review</strong>, oleh bagian terkait.</p>
-  	<hr/>
+  	<p>Modul ini berfungsi untuk menampilkan daftar / list permintaan Alat Tulis Kantor dari semua Divisi yang sudah dalam status : <strong>Setujui</strong>, untuk selanjutnya diteruskan ke Vendor dalam bentuk <u>kolektif</u>.</p>
+
+
+<div class="row">
+  <div class="col-lg-6">
+  	<div class="input-group">        		
+    	<span class="input-group-addon" id="basic-addon1">Nomor</span>
+    	<input type="text" class="form-control" name="text_nomor" placeholder="Masukkan Nomor Surat Permintaan Barang Kolektif" required />
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Keterangan...">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="button"><span class="glyphicon glyphicon-briefcase"></span> Buat DPB Kolektif</button>
+      </span>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
+
+<center>
+    <p class="hasil-submit" style="font-weight: bold;color: #00f;padding: 10px;"></p>
+</center>
+
 	<div class="table-responsive">
-	  	<table class="table table-hover table-bordered">
+	  	<table id="tabel-dpb" class="table table-hover table-bordered">
 	  		<thead>
 	  			<tr>
 	  				<th>#</th>

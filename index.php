@@ -8,7 +8,7 @@ if ($conn->connect_error) die("Connection failed: " . $conn->connect_error);
 ?>
 <html>
 <head>
-	<title>ATK & Inventory Manager - Build Version 1.0</title>
+	<title>Aplikasi Pengadaan ATK - Build Version 1.0</title>
 
 	<meta charset="utf-8">
 	<meta http-equiv="content-Type" content="text/html; charset=utf-8" />
