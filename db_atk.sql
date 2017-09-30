@@ -43,7 +43,7 @@ CREATE TABLE `barang` (
 
 LOCK TABLES `barang` WRITE;
 /*!40000 ALTER TABLE `barang` DISABLE KEYS */;
-INSERT INTO `barang` VALUES (1,'Ballpoint hitam tinta basah','PAK',54,'Khusus tanda tangan/ paraf',NULL,0,0,0,'ballpoint-black.jpg'),(2,'Ballpoint hitam tinta kering','PAK',15,'keperluan umum',NULL,0,0,0,'afro-skincare.jpg'),(7,'Lakban','BUAH',7,'keperluan pantry',NULL,0,0,0,'bulan-datang-meme.jpg'),(5,'Stempel','LEMBAR',40,'mantap jiwamu',NULL,0,0,0,'afro-child-meme.jpg'),(6,'Penghapus Pencil','DOS',0,'Keperluan gambar',NULL,0,0,0,'bird-of-paradise-1.jpg'),(8,'Kertas HVS','PAK',0,'',NULL,0,0,0,'68135-orek-tempe-kering-pedas.jpg'),(9,'hekter','BUAH',0,'',NULL,0,0,0,'brian-bramanto-6.jpg'),(10,'Spidol Hitam','DOS',0,'',NULL,0,0,0,'no-image.png'),(11,'Spidol Biru','DOS',0,'',NULL,0,0,0,'no-image.png'),(12,'Penggaris Lurus','DOS',0,'',NULL,0,0,0,'no-image.png'),(13,'Kertas Postit','DOS',0,'',NULL,0,0,0,'no-image.png'),(14,'Penggaris Segi Tiga','PAK',0,'',NULL,0,0,0,'no-image.png');
+INSERT INTO `barang` VALUES (1,'Ballpoint hitam tinta basah','PAK',54,'Khusus tanda tangan/ paraf',NULL,0,0,0,'300917105110-afro-skincare.jpg'),(2,'Ballpoint hitam tinta kering','PAK',15,'keperluan umum',NULL,0,0,0,'no-image.png'),(7,'Lakban','BUAH',7,'keperluan pantry',NULL,0,0,0,'no-image.png'),(5,'Stempel','LEMBAR',40,'mantap jiwamu',NULL,0,0,0,'no-image.png'),(6,'Penghapus Pencil','DOS',0,'Keperluan gambar',NULL,0,0,0,'no-image.png'),(8,'Kertas HVS','PAK',0,'',NULL,0,0,0,'300917101135-ilustrasi-toko-online1.jpg'),(9,'hekter','BUAH',0,'',NULL,0,0,0,'no-image.png'),(10,'Spidol Hitam','DOS',0,'',NULL,0,0,0,'no-image.png'),(11,'Spidol Biru','DOS',0,'',NULL,0,0,0,'no-image.png'),(12,'Penggaris Lurus','DOS',0,'',NULL,0,0,0,'no-image.png'),(13,'Kertas Postit','DOS',0,'',NULL,0,0,0,'no-image.png'),(14,'Penggaris Segi Tiga','PAK',0,'',NULL,0,0,0,'no-image.png');
 /*!40000 ALTER TABLE `barang` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -226,7 +226,7 @@ CREATE TABLE `user_logged` (
   `nama` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tgl` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -235,7 +235,7 @@ CREATE TABLE `user_logged` (
 
 LOCK TABLES `user_logged` WRITE;
 /*!40000 ALTER TABLE `user_logged` DISABLE KEYS */;
-INSERT INTO `user_logged` VALUES (1,'123456','root','2017-09-14 23:57:52'),(2,'123456','root','2017-09-15 17:51:22'),(3,'123456','root','2017-09-18 06:23:02'),(4,'123456','root','2017-09-20 03:23:58'),(5,'123456','root','2017-09-21 09:44:35'),(6,'123456','root','2017-09-22 03:10:55'),(7,'123456','root','2017-09-22 15:12:24'),(8,'123456','root','2017-09-23 15:39:20'),(9,'123456','root','2017-09-25 20:37:51'),(10,'123456','root','2017-09-25 23:49:16'),(11,'123456','root','2017-09-26 01:58:30'),(12,'123456','Root Linuxer','2017-09-26 04:14:34'),(13,'123456','Root Linuxer','2017-09-26 05:13:14'),(14,'123456','Root Linuxer','2017-09-26 10:22:08'),(15,'123456','Root Linuxer','2017-09-27 10:13:23'),(16,'123456','Root Linuxer','2017-09-28 08:59:19');
+INSERT INTO `user_logged` VALUES (1,'123456','root','2017-09-14 23:57:52'),(2,'123456','root','2017-09-15 17:51:22'),(3,'123456','root','2017-09-18 06:23:02'),(4,'123456','root','2017-09-20 03:23:58'),(5,'123456','root','2017-09-21 09:44:35'),(6,'123456','root','2017-09-22 03:10:55'),(7,'123456','root','2017-09-22 15:12:24'),(8,'123456','root','2017-09-23 15:39:20'),(9,'123456','root','2017-09-25 20:37:51'),(10,'123456','root','2017-09-25 23:49:16'),(11,'123456','root','2017-09-26 01:58:30'),(12,'123456','Root Linuxer','2017-09-26 04:14:34'),(13,'123456','Root Linuxer','2017-09-26 05:13:14'),(14,'123456','Root Linuxer','2017-09-26 10:22:08'),(15,'123456','Root Linuxer','2017-09-27 10:13:23'),(16,'123456','Root Linuxer','2017-09-28 08:59:19'),(17,'123456','Root Linuxer','2017-09-30 10:06:57'),(18,'123456','Root Linuxer','2017-09-30 13:30:36'),(19,'123456','Root Linuxer','2017-09-30 13:30:59'),(20,'123456','Root Linuxer','2017-09-30 13:33:12');
 /*!40000 ALTER TABLE `user_logged` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -248,4 +248,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-09-28 22:31:43
+-- Dump completed on 2017-09-30 22:50:45
