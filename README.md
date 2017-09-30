@@ -14,4 +14,4 @@ Aplikasi berbasis web PHP untuk manajemen ATK pada salah satu perusahaan swasta 
 
 > Update Hari ke-30
 
-![screenshoot](atk-mgr-30-09-2017.png)
+![screenshoot](atkmgr-30-09-2017.png)
