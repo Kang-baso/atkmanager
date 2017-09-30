@@ -1,5 +1,5 @@
 <?php
-
+$srl=date('dmyhsi-');
 ###Simpan FOTO###
 if (isset($_FILES['fileToUpload']) && isset($_POST['submit'])) {
 #if (isset($_POST['submit'])) {
@@ -10,7 +10,7 @@ if (isset($_FILES['fileToUpload']) && isset($_POST['submit'])) {
 
 	$hidden_id=$_POST['hidden_id'];
 
-	$target_file = $target_dir . basename($name);
+	$target_file = $target_dir . $srl.basename($name);
 	$uploadOk = 1;
 	$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 	// Check if image file is a actual image or fake image
@@ -48,10 +48,10 @@ if (isset($_FILES['fileToUpload']) && isset($_POST['submit'])) {
 	} else {
 	    if (move_uploaded_file($tmp_name, $target_file)) {
 	        echo "The file ". basename($name). " has been uploaded.";
-
+	        $names=$srl.$name;
 	        $sql="UPDATE barang SET img=? WHERE id=?;";
 			$stmt=$conn->prepare($sql);
-			$stmt->bind_param('si',$name,$hidden_id);
+			$stmt->bind_param('si',$names,$hidden_id);
 			$stmt->execute();
 			$stmt->close();
 

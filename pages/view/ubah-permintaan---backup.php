@@ -65,28 +65,24 @@ if (isset($_POST['button_cari'])) {
         while ($row = $result->fetch_row()){
 	?>
 
-  <div class="produk-grid">
-    <div class="gambar-produk-grid">
+  <div class="col-xs-6 col-md-3">
+    <div class="thumbnail">
       <img src="assets/img/item/<?php echo $row[9];?>" alt="<?php echo $row[1];?>" class="img-item" />
-    </div>
-    <div class="judul-produk-grid">
-      <span class="label-judul-produk"><?php echo ucwords($row[1]);?></span>
-    </div>
-    <div class="kontrol-produk-grid">
+      <div class="caption">
+        <span class="label-judul"><?php echo ucwords($row[1]);?></span>
         <form method="post" autocomplete="off" action="" id="form<?php echo $row[0];?>">
           <input type="hidden" name="hidden_id" value="<?php echo $row[0];?>" />
           <input type="hidden" name="hidden_nama" value="<?php echo ucwords($row[1]);?>" />
-          <input type="hidden" name="hidden_satuan" value="<?php echo strtoupper($row[2]);?>" />
-          <div class="input-groupx">           
-            <span class="input-group-addonx" id="basic-addon1x">Jumlah (<?php echo strtoupper($row[2]);?>)</span>
-            <input type="text" class="form-controlx" name="text_jml" value="1" size="3px" style="width: 50px;text-align: center;" />
-          </div>
-          <button type="button" name="submit<?php echo $row[0];?>" id="<?php echo $row[0];?>" class="btn btn-warning tambahkan"><span class="glyphicon glyphicon-shopping-cart"></span> Tambahkan</button>
+        	<input type="hidden" name="hidden_satuan" value="<?php echo strtoupper($row[2]);?>" />
+        	<div class="input-group">        		
+        		<span class="input-group-addon" id="basic-addon1">Jumlah (<?php echo strtoupper($row[2]);?>)</span>
+        		<input type="text" class="form-control" name="text_jml" value="1" size="5px" />
+        	</div>
+        	<button type="button" name="submit<?php echo $row[0];?>" id="<?php echo $row[0];?>" class="btn btn-warning tambahkan"><span class="glyphicon glyphicon-shopping-cart"></span> Tambahkan</button>
         </form>
+      </div>
     </div>
   </div>
-
-
 
 	<?php
 		}
