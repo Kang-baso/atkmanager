@@ -150,16 +150,18 @@ if (isset($_POST['submit-login'])) {
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Proses <span class="caret"></span></a>
-          <ul class="dropdown-menu">            <li><a href="?ref=pilih-item">Buat Permintaan</a></li>
+          <ul class="dropdown-menu">            
+            <li><a href="?ref=pilih-item">Buat Permintaan</a></li>
             <li><a href="?ref=edit-permintaan">Edit Permintaan</a></li>
             <li><a href="?ref=review-permintaan">Review Permintaan</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="?ref=list-permintaan">List Permintaan <span class="glyphicon glyphicon-list-alt"></span></a></li>
+            <li><a href="?ref=dpb-kolektif">Buat DPB Kolektif</a></li>
           </ul>
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Laporan <span class="caret"></span></a>
           <ul class="dropdown-menu">
+            <li><a href="?ref=list-permintaan">List Permintaan <span class="glyphicon glyphicon-list-alt"></span></a></li>
             <li><a href="?ref=hasil-review">Hasil Review</a></li>
             <li><a href="#">Rekap Permintaan</a></li>
             <li role="separator" class="divider"></li>

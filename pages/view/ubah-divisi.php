@@ -1,11 +1,13 @@
 <?php
 if (isset($_GET['id']) 
 	&& isset($_GET['nama']) 
-	&& isset($_GET['ket'])) {
+  && isset($_GET['ket'])
+) {
 
 	$id=trim($_GET['id']);
 	$nama=trim($_GET['nama']);
-	$ket=trim($_GET['ket']);
+  $ket=trim($_GET['ket']);
+	$mgr=trim($_GET['mgr']);
 
 
 ?>
@@ -24,6 +26,24 @@ if (isset($_GET['id'])
 		  <span class="input-group-addon">Keterangan</span>
 		  <input type="text" name="ket" class="form-control" placeholder="Input keterangan tambahan" value="<?php echo $ket;?>" />
 		</div>
+    <div class="input-group">
+      <span class="input-group-addon">Manager</span>
+      <select name="manager" id="manager" class="form-control">
+        <option value="">Kosongkan</option>
+        <?php
+        $sql="SELECT nik,nama FROM user ORDER by nama ASC";
+        $stmt=$conn->prepare($sql);
+        if ($stmt->execute()) {
+          $result = $stmt->get_result();
+          while ($row = $result->fetch_row()){
+            echo "
+            <option value=\"$row[0]\">$row[0] - $row[1]</option>
+            ";
+          }
+        }
+        ?>
+      </select>
+    </div>
 
 <center>
     <p class="hasil-submit" style=""></p>
@@ -37,6 +57,14 @@ if (isset($_GET['id'])
   	</form>
   </div>
 </div>
+
+<script type="text/javascript">
+document.getElementById('manager').value=<?php echo $mgr;?>;
+</script>
+
+<?php
+}
+?>
 
 <script type="text/javascript">
 $(document).ready(function(){
@@ -53,7 +81,3 @@ $(document).ready(function(){
     });  
 });
 </script>
-
-<?php
-}
-?>

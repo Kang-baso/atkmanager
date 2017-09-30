@@ -55,8 +55,9 @@ if (isset($_GET['back'])) {
   	</div>
 
   </div>
-</div>
 
-<center>
-	<a href="?ref=<?php echo $back;?>" class="btn btn-warning btn-lg">Kembali</a>
-</center>
+	<center>
+		<a href="?ref=<?php echo $back;?>" class="btn btn-warning btn-lg">Kembali</a>
+	</center>
+	<br/>
+</div>

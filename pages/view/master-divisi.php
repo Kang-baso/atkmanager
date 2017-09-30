@@ -17,7 +17,7 @@
   		<tbody>
   			<?php
   			$i=1;
-  			$sql="SELECT id, nama, ket FROM divisi ORDER BY id ASC;";
+  			$sql="SELECT id, nama, ket, nik_manager FROM divisi ORDER BY id ASC;";
 
   			$stmt=$conn->prepare($sql);
 			if ($stmt->execute()) {
@@ -29,7 +29,7 @@
 		  				<td>$row[1]</td>
 		  				<td>$row[2]</td>
 		  				<td><a href=\"?ref=hapus-divisi&id=$row[0]&nama=$row[1]&ket=$row[2]\" class=\"btn btn-sm btn-danger\"><span class=\"glyphicon glyphicon-trash\"></span></a></td>
-		  				<td><a href=\"?ref=ubah-divisi&id=$row[0]&nama=$row[1]&ket=$row[2]\" class=\"btn btn-sm btn-warning\"><span class=\"glyphicon glyphicon-pencil\"></span></a></td>
+		  				<td><a href=\"?ref=ubah-divisi&id=$row[0]&nama=$row[1]&ket=$row[2]&mgr=$row[3]\" class=\"btn btn-sm btn-warning\"><span class=\"glyphicon glyphicon-pencil\"></span></a></td>
 		  			</tr>
 					";
 					$i++;

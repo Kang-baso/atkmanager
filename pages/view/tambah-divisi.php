@@ -12,6 +12,24 @@
 		  <span class="input-group-addon">Keterangan</span>
 		  <input type="text" name="ket" class="form-control" placeholder="Input keterangan tambahan" />
 		</div>
+    <div class="input-group">
+      <span class="input-group-addon">Manager</span>
+      <select name="manager" class="form-control">
+        <option value="">Kosongkan</option>
+        <?php
+        $sql="SELECT nik,nama FROM user ORDER by nama ASC";
+        $stmt=$conn->prepare($sql);
+        if ($stmt->execute()) {
+          $result = $stmt->get_result();
+          while ($row = $result->fetch_row()){
+            echo "
+            <option value=\"$row[0]\">$row[0] - $row[1]</option>
+            ";
+          }
+        }
+        ?>
+      </select>
+    </div>
 
 <center>
     <p class="hasil-submit" style="font-weight: bold;color: #00f;padding: 10px;"></p>

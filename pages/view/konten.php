@@ -78,6 +78,9 @@ if (isset($_GET['ref'])) {
 		case 'acc-permintaan':
 			require_once('pages/view/acc-permintaan.php');
 			break;
+		case 'dpb-kolektif':
+			require_once('pages/view/dpb-kolektif.php');
+			break;
 		default:
 			# code...
 			break;
