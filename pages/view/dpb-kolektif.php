@@ -15,12 +15,12 @@ if (isset($_POST['submit']) && isset($_POST['jml'])&& strval($_POST['jml'])>0 ) 
 	}
 	if ($is_simpan==1) {
 		$sql="INSERT INTO dpb_kolektif(nomor,ket,nik)VALUES(?,?,?)";
-		$stmt=$con->prepare($sql);
+		$stmt=$conn->prepare($sql);
 		$stmt->bind_param('sss',$nomor,$ket,$nik);
 		$stmt->execute();
 		
 		$sql="INSERT INTO dpb_kolektif_d(nomor_dpb_kolektif,nomor_permintaan)VALUES(?,?)";
-		$stmt=$con->prepare($sql);
+		$stmt=$conn->prepare($sql);
 		$stmt->bind_param('ss',$nomor,$no_minta);
 		for ($j=1; $j <= $jml; $j++) { 
 			if (isset($_POST['chk'.$j])) {
@@ -31,7 +31,7 @@ if (isset($_POST['submit']) && isset($_POST['jml'])&& strval($_POST['jml'])>0 ) 
 		}
 		
 		$sql="UPDATE permintaan SET status=? WHERE nomor=?";
-		$stmt=$con->prepare($sql);
+		$stmt=$conn->prepare($sql);
 		$stmt->bind_param('is',$status,$no_minta);
 		for ($j=1; $j <= $jml; $j++) { 
 			if (isset($_POST['chk'.$j])) {
