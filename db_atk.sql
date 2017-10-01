@@ -74,6 +74,54 @@ INSERT INTO `divisi` VALUES (1,'Non Divisi','Khusus Direksi',NULL),(2,'Keuangan'
 UNLOCK TABLES;
 
 --
+-- Table structure for table `dpb_kolektif`
+--
+
+DROP TABLE IF EXISTS `dpb_kolektif`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `dpb_kolektif` (
+  `nomor` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ket` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tgl` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `nik` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`nomor`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `dpb_kolektif`
+--
+
+LOCK TABLES `dpb_kolektif` WRITE;
+/*!40000 ALTER TABLE `dpb_kolektif` DISABLE KEYS */;
+/*!40000 ALTER TABLE `dpb_kolektif` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `dpb_kolektif_d`
+--
+
+DROP TABLE IF EXISTS `dpb_kolektif_d`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `dpb_kolektif_d` (
+  `nomor_dpb_kolektif` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nomor_permintaan` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`nomor_dpb_kolektif`,`nomor_permintaan`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `dpb_kolektif_d`
+--
+
+LOCK TABLES `dpb_kolektif_d` WRITE;
+/*!40000 ALTER TABLE `dpb_kolektif_d` DISABLE KEYS */;
+/*!40000 ALTER TABLE `dpb_kolektif_d` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `notifikasi`
 --
 
@@ -125,7 +173,7 @@ CREATE TABLE `permintaan` (
 
 LOCK TABLES `permintaan` WRITE;
 /*!40000 ALTER TABLE `permintaan` DISABLE KEYS */;
-INSERT INTO `permintaan` VALUES ('SP/I/IX/2017','Rutin Bulanan',1,'2017-09-20 06:46:17','123456'),('DPB/PMSR/I/IX/2017','Permintaan Akhir Bulan',1,'2017-09-30 15:16:50','333');
+INSERT INTO `permintaan` VALUES ('SP/I/IX/2017','Rutin Bulanan',1,'2017-09-20 06:46:17','123456'),('DPB/PMSR/I/IX/2017','Permintaan Akhir Bulan',1,'2017-09-30 15:16:50','333'),('DPB/1/PNTB/X/2017','Permintaan Awal Bulan',1,'2017-09-30 23:06:34','222');
 /*!40000 ALTER TABLE `permintaan` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -152,7 +200,7 @@ CREATE TABLE `permintaan_d` (
 
 LOCK TABLES `permintaan_d` WRITE;
 /*!40000 ALTER TABLE `permintaan_d` DISABLE KEYS */;
-INSERT INTO `permintaan_d` VALUES ('SP/I/IX/2017',1,4,0,'-'),('SP/I/IX/2017',2,2,0,'-'),('SP/I/IX/2017',9,2,0,'-'),('SP/I/IX/2017',8,1,0,'-'),('DPB/PMSR/I/IX/2017',10,12,0,'-'),('DPB/PMSR/I/IX/2017',8,10,0,'-'),('DPB/PMSR/I/IX/2017',1,5,0,'-'),('SP/I/IX/2017',14,2,0,'-'),('SP/I/IX/2017',12,4,0,'-'),('SP/I/IX/2017',7,1,0,'-'),('SP/I/IX/2017',13,5,0,'-'),('SP/I/IX/2017',6,2,0,'-'),('SP/I/IX/2017',11,1,0,'-'),('SP/I/IX/2017',10,1,0,'-'),('SP/I/IX/2017',5,1,0,'-'),('DPB/PMSR/I/IX/2017',7,6,0,'-'),('DPB/PMSR/I/IX/2017',13,7,0,'-');
+INSERT INTO `permintaan_d` VALUES ('SP/I/IX/2017',1,4,0,'-'),('SP/I/IX/2017',2,2,0,'-'),('SP/I/IX/2017',9,2,0,'-'),('SP/I/IX/2017',8,1,0,'-'),('DPB/PMSR/I/IX/2017',10,12,0,'-'),('DPB/PMSR/I/IX/2017',8,10,0,'-'),('DPB/PMSR/I/IX/2017',1,5,0,'-'),('SP/I/IX/2017',14,2,0,'-'),('SP/I/IX/2017',12,4,0,'-'),('SP/I/IX/2017',7,1,0,'-'),('SP/I/IX/2017',13,5,0,'-'),('SP/I/IX/2017',6,2,0,'-'),('SP/I/IX/2017',11,1,0,'-'),('SP/I/IX/2017',10,1,0,'-'),('SP/I/IX/2017',5,1,0,'-'),('DPB/PMSR/I/IX/2017',7,6,0,'-'),('DPB/PMSR/I/IX/2017',13,7,0,'-'),('DPB/1/PNTB/X/2017',12,4,0,'-'),('DPB/1/PNTB/X/2017',7,2,0,'-'),('DPB/1/PNTB/X/2017',1,1,0,'-'),('DPB/1/PNTB/X/2017',8,3,0,'-'),('DPB/1/PNTB/X/2017',6,2,0,'-'),('DPB/1/PNTB/X/2017',13,8,0,'-');
 /*!40000 ALTER TABLE `permintaan_d` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -209,7 +257,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('123456','Root Linuxer','63a9f0ea7bb98050796b649e85481845','085244444830','ondiisrail@gmail.com','Staf IT',4,'666',1),('666','Djumandjie','fae0b27c451c728867a567e8c1bb4e53','085244444592','arafuru.style@gmail.com',NULL,4,'',0),('555','Vivi','15de21c670ae7c3f6f3f1f37029303c9','081527745622','humaspdamjpr@gmail.com',NULL,3,'',2),('333','Trie','310dcbbf4cce62f762a2aaa148d556bd','0811481219','r41l_86@yahoo.com',NULL,3,'555',3);
+INSERT INTO `user` VALUES ('123456','Root Linuxer','63a9f0ea7bb98050796b649e85481845','085244444830','ondiisrail@gmail.com','Staf IT',4,'666',1),('666','Djumandjie','fae0b27c451c728867a567e8c1bb4e53','085244444592','arafuru.style@gmail.com',NULL,4,'',0),('555','Vivi','15de21c670ae7c3f6f3f1f37029303c9','081527745622','humaspdamjpr@gmail.com',NULL,3,'',2),('333','Trie','310dcbbf4cce62f762a2aaa148d556bd','0811481219','r41l_86@yahoo.com',NULL,3,'555',3),('888','Oktavius','0a113ef6b61820daa5611c870ed8d5ee','085244448888','samudranta@gmail.com',NULL,5,'',2),('222','Dwi Arsana','bcbe3365e6ac95ea2c0343a2395834dd','081545672222','r41l_22@hotmail.com',NULL,5,'888',3);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -226,7 +274,7 @@ CREATE TABLE `user_logged` (
   `nama` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tgl` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -235,7 +283,7 @@ CREATE TABLE `user_logged` (
 
 LOCK TABLES `user_logged` WRITE;
 /*!40000 ALTER TABLE `user_logged` DISABLE KEYS */;
-INSERT INTO `user_logged` VALUES (1,'123456','root','2017-09-14 23:57:52'),(2,'123456','root','2017-09-15 17:51:22'),(3,'123456','root','2017-09-18 06:23:02'),(4,'123456','root','2017-09-20 03:23:58'),(5,'123456','root','2017-09-21 09:44:35'),(6,'123456','root','2017-09-22 03:10:55'),(7,'123456','root','2017-09-22 15:12:24'),(8,'123456','root','2017-09-23 15:39:20'),(9,'123456','root','2017-09-25 20:37:51'),(10,'123456','root','2017-09-25 23:49:16'),(11,'123456','root','2017-09-26 01:58:30'),(12,'123456','Root Linuxer','2017-09-26 04:14:34'),(13,'123456','Root Linuxer','2017-09-26 05:13:14'),(14,'123456','Root Linuxer','2017-09-26 10:22:08'),(15,'123456','Root Linuxer','2017-09-27 10:13:23'),(16,'123456','Root Linuxer','2017-09-28 08:59:19'),(17,'123456','Root Linuxer','2017-09-30 10:06:57'),(18,'123456','Root Linuxer','2017-09-30 13:30:36'),(19,'123456','Root Linuxer','2017-09-30 13:30:59'),(20,'123456','Root Linuxer','2017-09-30 13:33:12'),(21,'123456','Root Linuxer','2017-09-30 13:52:42'),(22,'123456','Root Linuxer','2017-09-30 14:28:35'),(23,'123456','Root Linuxer','2017-09-30 14:41:15'),(24,'333','Trie','2017-09-30 14:42:37'),(25,'333','Trie','2017-09-30 14:44:01'),(26,'333','Trie','2017-09-30 15:00:23'),(27,'123456','Root Linuxer','2017-09-30 15:08:21'),(28,'333','Trie','2017-09-30 15:10:46'),(29,'555','Vivi','2017-09-30 15:11:36'),(30,'333','Trie','2017-09-30 15:11:55'),(31,'123456','Root Linuxer','2017-09-30 15:14:24'),(32,'333','Trie','2017-09-30 15:14:40'),(33,'555','Vivi','2017-09-30 16:04:55'),(34,'333','Trie','2017-09-30 16:05:06');
+INSERT INTO `user_logged` VALUES (1,'123456','root','2017-09-14 23:57:52'),(2,'123456','root','2017-09-15 17:51:22'),(3,'123456','root','2017-09-18 06:23:02'),(4,'123456','root','2017-09-20 03:23:58'),(5,'123456','root','2017-09-21 09:44:35'),(6,'123456','root','2017-09-22 03:10:55'),(7,'123456','root','2017-09-22 15:12:24'),(8,'123456','root','2017-09-23 15:39:20'),(9,'123456','root','2017-09-25 20:37:51'),(10,'123456','root','2017-09-25 23:49:16'),(11,'123456','root','2017-09-26 01:58:30'),(12,'123456','Root Linuxer','2017-09-26 04:14:34'),(13,'123456','Root Linuxer','2017-09-26 05:13:14'),(14,'123456','Root Linuxer','2017-09-26 10:22:08'),(15,'123456','Root Linuxer','2017-09-27 10:13:23'),(16,'123456','Root Linuxer','2017-09-28 08:59:19'),(17,'123456','Root Linuxer','2017-09-30 10:06:57'),(18,'123456','Root Linuxer','2017-09-30 13:30:36'),(19,'123456','Root Linuxer','2017-09-30 13:30:59'),(20,'123456','Root Linuxer','2017-09-30 13:33:12'),(21,'123456','Root Linuxer','2017-09-30 13:52:42'),(22,'123456','Root Linuxer','2017-09-30 14:28:35'),(23,'123456','Root Linuxer','2017-09-30 14:41:15'),(24,'333','Trie','2017-09-30 14:42:37'),(25,'333','Trie','2017-09-30 14:44:01'),(26,'333','Trie','2017-09-30 15:00:23'),(27,'123456','Root Linuxer','2017-09-30 15:08:21'),(28,'333','Trie','2017-09-30 15:10:46'),(29,'555','Vivi','2017-09-30 15:11:36'),(30,'333','Trie','2017-09-30 15:11:55'),(31,'123456','Root Linuxer','2017-09-30 15:14:24'),(32,'333','Trie','2017-09-30 15:14:40'),(33,'555','Vivi','2017-09-30 16:04:55'),(34,'333','Trie','2017-09-30 16:05:06'),(35,'123456','Root Linuxer','2017-09-30 16:36:11'),(36,'222','Dwi Arsana','2017-09-30 23:05:01'),(37,'222','Dwi Arsana','2017-10-01 06:38:26'),(38,'222','Dwi Arsana','2017-10-01 15:02:12'),(39,'222','Dwi Arsana','2017-10-01 17:37:16');
 /*!40000 ALTER TABLE `user_logged` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -248,4 +296,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-10-01  1:35:12
+-- Dump completed on 2017-10-02  3:37:01
