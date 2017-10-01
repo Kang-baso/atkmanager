@@ -41,6 +41,32 @@ if (isset($_POST['submit']) && isset($_POST['jml'])&& strval($_POST['jml'])>0 ) 
 			}
 		}
 		$stmt->close();
+
+?>
+<script type="text/javascript">
+	  $( function() {
+    $( "#dialog-message" ).dialog({
+      modal: true,
+      buttons: {
+        Ok: function() {
+          $( this ).dialog( "close" );
+        }
+      }
+    });
+  } );
+</script>
+
+<div id="dialog-message" title="Notifikasi">
+  <p>
+    <span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 50px 0;"></span>
+    Simpan DPB Kolektif
+  </p>
+  <p>
+    Proses simpan DPB Kolektif dengan nomor: <?php echo $nomor;?>, selesai.
+  </p>
+</div>
+<?php
+
 	}
 }
 ?>
@@ -63,7 +89,7 @@ if (isset($_POST['submit']) && isset($_POST['jml'])&& strval($_POST['jml'])>0 ) 
   </div>
   <div class="col-lg-6">
     <div class="input-group">
-      <input type="text" name="text_ket" class="form-control" placeholder="Keterangan...">
+      <input type="text" name="text_ket" class="form-control" placeholder="Keterangan..." required />
       <span class="input-group-btn">
         <button class="btn btn-primary" type="submit" name="submit"><span class="glyphicon glyphicon-duplicate"></span> Buat DPB Kolektif</button>
       </span>

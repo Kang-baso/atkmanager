@@ -27,16 +27,16 @@ function get_status($key){
 	$result="";
 	switch ($key) {
 		case 0:
-			$result="Review";
+			$result="Review Divisi";
 			break;
-		/*case 2:
-			$result="Ditolak Semua Item";
+		case 1:
+			$result="Teruskan ke SDM";
 			break;
-		case 3:
-			$result="Ditolak Sebagian Item";
-			break;*/
+		case 2:
+			$result="Teruskan ke Vendor";			
+			break;
 		default:
-			$result="Disetujui";
+			$result="Sudah diterima";
 			break;
 	}
 	return $result;

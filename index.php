@@ -28,6 +28,23 @@ if ($conn->connect_error) die("Connection failed: " . $conn->connect_error);
   <script type="text/javascript" src="libs/export/jspdf/jspdf.js"></script>
   <script type="text/javascript" src="libs/export/jspdf/libs/base64.js"></script>
 
+  <script type="text/javascript">
+    $(function() {
+    $( ".datepicker" ).datepicker({
+       changeMonth: true,
+       changeYear: true//,
+      //showOn:"button"
+      });
+      
+      $( ".datepicker" ).datepicker({ altFormat: 'yy-mm-dd' });
+      $( ".datepicker" ).change(function() {
+        $( ".datepicker" ).datepicker( "option", "dateFormat","yy-mm-dd" );
+      });
+      
+      $( ".button" ).button();   
+      
+    });
+  </script>
 
 </head>
 <body>
@@ -162,10 +179,10 @@ if (isset($_POST['submit-login'])) {
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Laporan <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="?ref=list-permintaan">List Permintaan <span class="glyphicon glyphicon-list-alt"></span></a></li>
-            <li><a href="?ref=hasil-review">Hasil Review</a></li>
-            <li><a href="#">Rekap Permintaan</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Inventory</a></li>
+            <li><a href="?ref=cetak-permintaan">Cetak Permintaan</a></li>
+            <li><a href="#">Cetak PDB Kolektif</a></li>
+            <!--li><a href="#">Inventory</a></li-->
           </ul>
         </li>
       </ul>        
