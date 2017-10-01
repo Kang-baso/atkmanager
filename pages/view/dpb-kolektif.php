@@ -17,7 +17,7 @@
     <div class="input-group">
       <input type="text" class="form-control" placeholder="Keterangan...">
       <span class="input-group-btn">
-        <button class="btn btn-primary" type="button"><span class="glyphicon glyphicon-briefcase"></span> Buat DPB Kolektif</button>
+        <button class="btn btn-primary" type="button"><span class="glyphicon glyphicon-duplicate"></span> Buat DPB Kolektif</button>
       </span>
     </div><!-- /input-group -->
   </div><!-- /.col-lg-6 -->
