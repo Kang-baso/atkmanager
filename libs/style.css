@@ -111,3 +111,7 @@ body{
 	background-color: #fff;
 	border-radius: 5px;
 }
+
+.panel{
+min-height:450px;
+}

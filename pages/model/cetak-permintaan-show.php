@@ -33,9 +33,9 @@ if ( isset($_POST['tgl1']) && isset($_POST['tgl2']) ) {
 			while($row=$result->fetch_row()){
 				$i++;
 				echo "
-				<tr valign=\"center\">
+				<tr valign=\"middle\">
 					<td>$i</td>
-					<td align=\"center\">$row[0]</td>
+					<td><a href=\"?ref=detail-permintaan&id=$row[0]&back=cetak-permintaan\" title=\"Lihat detail...\"><strong>$row[0]</strong></a></td>
 					<td>$row[1]</td>
 					<td align=\"center\">$row[3]</td>
 					<td align=\"center\"><b class=\"label label-primary\">".get_status($row[2])."</b></td>
@@ -50,7 +50,7 @@ if ( isset($_POST['tgl1']) && isset($_POST['tgl2']) ) {
                                                          <input type="hidden" name="nama1" value="<?php echo $row[6];?>" />
                                                          <input type="hidden" name="nik2" value="<?php echo $row[7];?>" />
                                                          <input type="hidden" name="nama2" value="<?php echo $row[8];?>" />
-                                                         <button type="submit" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-print"></span> Cetak</button>
+                                                         <button type="submit" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-print"></span></button>
                                                  </form>
 
 <?php
