@@ -181,7 +181,7 @@ if (isset($_POST['submit-login'])) {
             <li><a href="?ref=list-permintaan">List Permintaan <span class="glyphicon glyphicon-list-alt"></span></a></li>
             <li role="separator" class="divider"></li>
             <li><a href="?ref=cetak-permintaan">Cetak Permintaan</a></li>
-            <li><a href="#">Cetak PDB Kolektif</a></li>
+            <li><a href="?ref=cetak-dpb-kolektif">Cetak DPB Kolektif</a></li>
             <!--li><a href="#">Inventory</a></li-->
           </ul>
         </li>
