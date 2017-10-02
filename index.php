@@ -206,7 +206,7 @@ if (isset($_POST['submit-login'])) {
             <li><a href="?ref=karyawan">Karyawan</a></li>
             <li><a href="#">Hak Masuk</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Panduan</a></li>
+            <li><a href="?ref=panduan">Panduan</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="?ref=log-out">Keluar <span class="glyphicon glyphicon-log-out"></span></a></li>
           </ul>

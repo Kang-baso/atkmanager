@@ -12,6 +12,9 @@ if (isset($_GET['ref'])) {
 		case 'divisi':
 			require_once('pages/view/master-divisi.php');
 			break;
+		case 'panduan':
+			require_once('pages/view/panduan.php');
+			break;
 		case 'tambah-divisi':
 			require_once('pages/view/tambah-divisi.php');
 			break;
