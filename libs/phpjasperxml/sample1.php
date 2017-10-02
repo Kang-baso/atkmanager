@@ -8,7 +8,8 @@ include_once("class/PHPJasperXML.inc.php");
 include_once ('setting.php');
 
 
-
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 
 
 
