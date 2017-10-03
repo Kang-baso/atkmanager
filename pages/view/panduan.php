@@ -1,31 +1,6 @@
-<!--?php
-require 'libs/PHPMailer/PHPMailerAutoload.php';
-
-$email = "humaspdamjpr@gmail.com";
-$password = "";
-$to_id = "ondiisrail@gmail.com";
-$message = "konten";
-$subject = "subjek";
-$mail = new PHPMailer;
-$mail->isSMTP();
-$mail->Host = 'smtp.gmail.com';
-$mail->Port = 587;
-$mail->SMTPSecure = 'tls';
-$mail->SMTPAuth = true;
-$mail->Username = $email;
-$mail->Password = $password;
-$mail->addAddress($to_id);
-$mail->Subject = $subject;
-$mail->msgHTML($message);
-if (!$mail->send()) {
-$error = "Mailer Error: " . $mail->ErrorInfo;
-echo '<p id="para">'.$error.'</p>';
-}
-else {
-echo '<p id="para">Message sent!</p>';
-}
-
-?-->
+<?php
+kirim_email("0");
+?>
 
 <div class="panel panel-default">
   <div class="panel-heading">

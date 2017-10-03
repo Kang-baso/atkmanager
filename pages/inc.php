@@ -194,4 +194,36 @@ function simpan_foto(){
 
 }
 
+function kirim_email($nomor_dpb_kolektif){
+
+require_once('libs/PHPMailer/PHPMailerAutoload.php');
+
+$email = "noreplyrobotmail@gmail.com";
+$password = "pdamjpr!@#";
+$to_id = "";
+$message = "BEWARE: using AddCC() in place of AddAddress() caused the PHPMailer error Email error.";
+$subject = "subjek";
+$mail = new PHPMailer;
+$mail->isSMTP();
+$mail->Host = 'smtp.gmail.com';
+$mail->Port = 587;
+$mail->SMTPSecure = 'tls';
+$mail->SMTPAuth = true;
+$mail->Username = $email;
+$mail->Password = $password;
+$mail->addAddress('ondiisrail@gmail.com');
+$mail->addAddress('humaspdamjpr@gmail.com');
+$mail->Subject = $subject;
+$mail->msgHTML($message);
+
+if (!$mail->send()) {
+$error = "Mailer Error: " . $mail->ErrorInfo;
+echo '<p id="para">'.$error.'</p>';
+}
+else {
+echo '<p id="para">Message sent!</p>';
+}
+
+}
+
 ?>
