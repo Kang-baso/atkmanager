@@ -11,11 +11,12 @@ if ( isset($_POST['nik']) && isset($_POST['nama']) && isset($_POST['pass']) && i
 	$email=trim($_POST['email']);
 	$divisi=trim($_POST['divisi']);
 	$atasan=trim($_POST['atasan']);
+	$posisi=trim($_POST['posisi']);
 
 	if (strlen($nama)>0 && strlen($nik)>0 && strlen($pass)>0 && strlen($divisi)>0) {
-		$sql="INSERT IGNORE INTO user(nik, nama, password, telp, email, id_divisi,nik_atasan)VALUES(?, ?, ?, ?, ?, ?,?);";
+		$sql="INSERT IGNORE INTO user(nik, nama, password, telp, email, id_divisi,nik_atasan,posisi)VALUES(?, ?, md5(?), ?, ?, ?,?,?);";
 		$stmt=$conn->prepare($sql);
-		$stmt->bind_param('sssssis',$nik,$nama,$pass,$telp,$email,$divisi,$atasan);
+		$stmt->bind_param('sssssiss',$nik,$nama,$pass,$telp,$email,$divisi,$atasan,$posisi);
 		if ($stmt->execute()) {
 			echo "Berhasil menambah data !";
 			#echo "<script type=\"text/javascript\">document.getElementById('form').reset();</script>";			

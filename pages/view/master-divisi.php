@@ -25,11 +25,11 @@
 				while ($row = $result->fetch_row()){
 					echo "
 					<tr>
-		  				<td>$i</td>
+		  				<td align=\"center\">$i</td>
 		  				<td>$row[1]</td>
 		  				<td>$row[2]</td>
-		  				<td><a href=\"?ref=hapus-divisi&id=$row[0]&nama=$row[1]&ket=$row[2]\" class=\"btn btn-sm btn-danger\"><span class=\"glyphicon glyphicon-trash\"></span></a></td>
-		  				<td><a href=\"?ref=ubah-divisi&id=$row[0]&nama=$row[1]&ket=$row[2]&mgr=$row[3]\" class=\"btn btn-sm btn-warning\"><span class=\"glyphicon glyphicon-pencil\"></span></a></td>
+		  				<td align=\"center\"><a href=\"?ref=hapus-divisi&id=$row[0]&nama=$row[1]&ket=$row[2]\" class=\"btn btn-sm btn-danger\"><span class=\"glyphicon glyphicon-trash\"></span></a></td>
+		  				<td align=\"center\"><a href=\"?ref=ubah-divisi&id=$row[0]&nama=$row[1]&ket=$row[2]&mgr=$row[3]\" class=\"btn btn-sm btn-warning\"><span class=\"glyphicon glyphicon-pencil\"></span></a></td>
 		  			</tr>
 					";
 					$i++;
