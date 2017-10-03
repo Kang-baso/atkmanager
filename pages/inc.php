@@ -197,12 +197,13 @@ function simpan_foto(){
 function kirim_email($nomor_dpb_kolektif){
 
 require_once('libs/PHPMailer/PHPMailerAutoload.php');
+$conn0=new mysqli(HOST,USER,PASS,DB);
+if ($conn0->connect_error) die("Connection failed: " . $conn0->connect_error);
 
 $email = "noreplyrobotmail@gmail.com";
 $password = "pdamjpr!@#";
-$to_id = "";
-$message = "BEWARE: using AddCC() in place of AddAddress() caused the PHPMailer error Email error.";
-$subject = "subjek";
+$message = "SEBUAH PERMINTAAN ATK DENGAN NOMOR $nomor_dpb_kolektif TELAH DIBUAT.";
+$subject = "Permintaan ATK telah dibuat !";
 $mail = new PHPMailer;
 $mail->isSMTP();
 $mail->Host = 'smtp.gmail.com';
@@ -211,17 +212,32 @@ $mail->SMTPSecure = 'tls';
 $mail->SMTPAuth = true;
 $mail->Username = $email;
 $mail->Password = $password;
-$mail->addAddress('ondiisrail@gmail.com');
-$mail->addAddress('humaspdamjpr@gmail.com');
+
+#$mail->addAddress('humaspdamjpr@gmail.com');
+
+$sql0="SELECT DISTINCT d.id,d.nama,u.nik,u.nama,u.email FROM user AS u INNER JOIN divisi AS d ON d.id=u.id_divisi WHERE (u.email<>'' OR u.email IS NOT NULL) AND u.nik IN(SELECT DISTINCT u1.nik FROM user AS u1 INNER JOIN divisi AS d ON d.id=u1.id_divisi INNER JOIN user AS u2 ON u2.id_divisi=d.id INNER JOIN permintaan AS p ON p.nik=u2.nik INNER JOIN dpb_kolektif_d AS k2 ON k2.nomor_permintaan=p.nomor WHERE k2.nomor_dpb_kolektif='$nomor_dpb_kolektif');";
+$stmt0=$conn0->prepare($sql0);
+if($stmt0->execute()){
+	$result0=$stmt0->get_result();
+	while($row0=$result0->fetch_row()){
+		$mail->addAddress($row0[4],$row0[3]);
+	}
+	
+}
+$stmt0->close();
+$conn0->close();
+
+$mail->addAddress('ondiisrail@gmail.com','ATK Manager Developer');
+
 $mail->Subject = $subject;
 $mail->msgHTML($message);
 
 if (!$mail->send()) {
 $error = "Mailer Error: " . $mail->ErrorInfo;
-echo '<p id="para">'.$error.'</p>';
+#echo '<p id="para">'.$error.'</p>';
 }
 else {
-echo '<p id="para">Message sent!</p>';
+#echo '<p id="para">Message sent!</p>';
 }
 
 }

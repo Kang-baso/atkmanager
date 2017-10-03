@@ -40,7 +40,11 @@ if (isset($_POST['submit']) && isset($_POST['jml'])&& strval($_POST['jml'])>0 ) 
 				$stmt->execute();
 			}
 		}
-		$stmt->close();
+
+
+		#$stmt->close();
+
+		if ($stmt->close())  kirim_email($nomor);
 
 ?>
 <script type="text/javascript">

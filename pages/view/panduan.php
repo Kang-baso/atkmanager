@@ -1,5 +1,5 @@
 <?php
-kirim_email("0");
+#kirim_email("0");
 ?>
 
 <div class="panel panel-default">
