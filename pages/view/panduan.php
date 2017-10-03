@@ -2,7 +2,7 @@
 require 'libs/PHPMailer/PHPMailerAutoload.php';
 
 $email = "humaspdamjpr@gmail.com";
-$password = "pdamjpr.123";
+$password = "";
 $to_id = "ondiisrail@gmail.com";
 $message = "konten";
 $subject = "subjek";
