@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="cetak-dpb-kolektif" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="de408080-ac4a-4d8b-8c11-5153a2e29269">
-	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.zoom" value="4.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="196"/>
+	<property name="ireport.y" value="452"/>
 	<queryString language="SQL">
 		<![CDATA[SELECT b.nama,SUM(p2.jml_minta),b.satuan FROM dpb_kolektif_d AS d2 INNER JOIN permintaan_d AS p2 ON p2.nomor_permintaan=d2.nomor_permintaan INNER JOIN barang AS b ON b.id=p2.id_barang GROUP BY b.id;]]>
 	</queryString>
@@ -23,48 +23,113 @@
 		<band height="35" splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
-		<band height="61" splitType="Stretch">
+		<band height="20" splitType="Stretch">
 			<staticText>
 				<reportElement x="47" y="0" width="270" height="20" uuid="150f3d0b-f90c-4700-a06d-ff7b5d6d22b9"/>
-				<textElement textAlignment="Center"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
 				<text><![CDATA[Nama]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="317" y="0" width="100" height="20" uuid="7927cc39-1ccc-42e1-9ef9-e34ea4943f71"/>
-				<textElement textAlignment="Center"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
 				<text><![CDATA[Jumlah]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="417" y="0" width="155" height="20" uuid="e29a7c8d-84f8-478a-a94e-e5aadf39671a"/>
-				<textElement textAlignment="Center"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
 				<text><![CDATA[Satuan]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="0" width="45" height="20" uuid="61f0d3d9-e1fa-431d-91a7-1f8f37c17ed5"/>
-				<textElement textAlignment="Center"/>
+				<reportElement x="0" y="0" width="47" height="20" uuid="61f0d3d9-e1fa-431d-91a7-1f8f37c17ed5"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
 				<text><![CDATA[No.]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="125" splitType="Stretch">
+		<band height="20" splitType="Stretch">
 			<textField>
-				<reportElement x="0" y="0" width="45" height="20" uuid="678e4839-b6bf-4961-85c4-58932d4eb3ee"/>
-				<textElement textAlignment="Center"/>
+				<reportElement x="0" y="0" width="47" height="20" uuid="678e4839-b6bf-4961-85c4-58932d4eb3ee"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="47" y="0" width="270" height="20" uuid="d665c5bd-9808-4463-854e-b6d98c17befc"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="317" y="0" width="100" height="20" uuid="95ffcc2e-7421-45b3-a6f3-77bd24a32b04"/>
-				<textElement textAlignment="Center"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{SUM(p2.jml_minta)}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="417" y="0" width="155" height="20" uuid="cec3c261-b76c-498e-bb1e-54576921e452"/>
-				<textElement textAlignment="Center"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{satuan}]]></textFieldExpression>
 			</textField>
 		</band>

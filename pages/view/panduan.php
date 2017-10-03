@@ -1,4 +1,4 @@
-<?php
+<!--?php
 require 'libs/PHPMailer/PHPMailerAutoload.php';
 
 $email = "humaspdamjpr@gmail.com";
@@ -25,7 +25,7 @@ else {
 echo '<p id="para">Message sent!</p>';
 }
 
-?>
+?-->
 
 <div class="panel panel-default">
   <div class="panel-heading">

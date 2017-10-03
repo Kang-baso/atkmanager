@@ -38,7 +38,7 @@ if ( isset($_POST['tgl1']) && isset($_POST['tgl2']) ) {
 					<td align=\"center\">$row[2]</td>
 					<td align=\"center\" title=\"Cetak\">";
 ?>
-                                                 <form method="post" target="_blank" action="<?php echo base_url()."pages/reports/cetak-permintaan.php";?>" >
+                                                 <form method="post" target="_blank" action="<?php echo base_url()."pages/reports/cetak-dpb-kolektif.php";?>" >
                                                          <input type="hidden" name="nomor" value="<?php echo $row[0];?>" />
                                                          <input type="hidden" name="ket" value="<?php echo $row[1];?>" />
                                                          <input type="hidden" name="tgl" value="<?php echo $row[2];?>" />
