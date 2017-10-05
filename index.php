@@ -4,7 +4,7 @@ session_start();
 require_once('pages/inc.php');
 $conn=new mysqli(HOST,USER,PASS,DB);
 if ($conn->connect_error) die("Connection failed: " . $conn->connect_error);
-
+#test
 ?>
 <html>
 <head>
