@@ -155,11 +155,12 @@ if (isset($_POST['submit-login'])) {
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Berkas <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="?ref=barang">Barang</a></li>
-            <li><a href="?ref=divisi">Bidang</a></li>
             <li role="separator" class="divider"></li>
+            <li><a href="?ref=divisi">Bidang</a></li>
+            <!--li role="separator" class="divider"></li>
             <li><a href="?ref=vendor">Vendor</a></li>
             <li><a href="#">Barang Masuk</a></li>
-            <!--li role="separator" class="divider"></li>
+            <li role="separator" class="divider"></li>
             <li><a href="#">Separated link</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#">One more separated link</a></li-->
